@@ -13,9 +13,8 @@ function App() {
         <div className="App">
             <header className="App-header">
                 <img
-                    src={'/assets/images/icon-user.svg'}
-                    className="App-logo"
-                    alt="logo"
+                    src={'/assets/images/jeju-island.jpg'}
+                    alt="sample-image"
                 />
                 <p className={cx('widget')}>테스트(widget)</p>
                 <p className={cx('callout')}>테스트(Callout1)</p>
