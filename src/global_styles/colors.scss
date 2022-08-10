@@ -1,0 +1,73 @@
+:root {
+  --Primary-Lightest_1: #F3F6FA;
+  --Primary-Lightest_2: #EDF3FC;
+  --Primary-Lighter_1: #DCE8FA;
+  --Primary-Lighter_2: #C2DBFF;
+  --Primary-Light_1: #90BDFF;
+  --Primary-Light_3: #0085FF;
+  --Primary-Darker_1: #181A3B;
+  --Primary-Darker_2: #203660;
+  --Primary-Dark: #3C5C8A;
+  --Primary-Default: #0D66EC;
+
+  --Grey-Lightest_1: #FCFDFF;
+  --Grey-Lightest_2: #F7F9FB;
+  --Grey-Lighter_1: #DFE2EB;
+  --Grey-Lighter_2: #C8CBD9;
+  --Grey-Darker_1: #292A2D;
+  --Grey-Darker_2: #3D3F43;
+  --Grey-Dark: #636C7C;
+  --Grey-Default: #9CA4B7;
+
+  --Black-White: #FFFFFF;
+  --Black-Dark: #161D1F;
+  --Black-Darker_2: #0F181A;
+  --Black-Darker_1: #09090A;
+
+  --Red-Lighter: #FFEFF5;
+  --Red-Light: #FFCEDF;
+  --Red-Default: #D53069;
+  --Red-Darker_1: #431927;
+  --Red-Darker_2: #712E45;
+  --Red-Dark_1: #9E1142;
+  --Red-Dark_2: #9D0722;
+
+  --Orange-Light: #FFDC78;
+  --Orange-Default: #FFBE44;
+  --Orange-Dark: #544427;
+  --Orange-Darker: #382A10;
+
+  --Green-Light: #BEFF6B;
+
+  --Gradient-Blue_1: linear-gradient(129.62deg, #1F36BB 15.32%, #2DB3FF 88.31%);
+  --Gradient-Blue_2: linear-gradient(180deg, #2496FF 24.48%, #3C5C8A 50%, #181A3B 100%);
+  --Gradient-Blue_3: linear-gradient(145.53deg, #4A9DFF 10.46%, #0018EF 86.16%);
+  --Gradient-Blue_4: linear-gradient(180deg, #00C1EB 0%, #50ABFF 0.01%, #002074 100%);
+
+  --Gradient-Green_1: linear-gradient(129.62deg, #007880 15.32%, #28EAD3 88.31%);
+  --Gradient-Green_2: linear-gradient(180deg, #D2FC8E 0%, #008325 100%);
+
+  --Gradient-Cyan_1: linear-gradient(180deg, #00FFFF 0%, #014959 100%);
+  --Gradient-Cyan_2: linear-gradient(180deg, #00FFFF 0%, #014959 100%);
+
+  --Gradient-Pink: linear-gradient(180deg, #FF7ABA 0%, #A80183 100%);
+
+  --Gradient-Red_1: linear-gradient(326.31deg, #E80553 50.35%, #FF6287 77.88%);
+  --Gradient-Red_2: linear-gradient(136.97deg, #FF7283 26.37%, #C6002F 60.53%);
+
+  --Gradient-Orange: linear-gradient(310.65deg, #E27202 37.8%, #FFBE44 66.93%);
+
+  --Gradient-Yellow: linear-gradient(180deg, #FFF491 0%, #FF7A00 100%);
+
+  --Opacity-Primary: rgba(20, 114, 255, 0.05);
+  --Opacity-Cyan_1: rgba(95, 255, 255, 0.5);
+  --Opacity-Cyan_2: linear-gradient(180deg, rgba(11, 255, 240, 0.5) 0%, rgba(0, 69, 69, 0.5) 100%);
+  --Opacity-Green_1: linear-gradient(180deg, rgba(27, 255, 145, 0.5) 0%, rgba(43, 96, 83, 0.5) 100%);
+  --Opacity-Green_2: linear-gradient(180deg, rgba(6, 207, 171, 0.5) 0%, rgba(6, 207, 171, 0.2) 100%);
+
+  --Opacity-Peach: linear-gradient(180deg, rgba(255, 222, 103, 0.5) 0%, rgba(255, 103, 130, 0.5) 100%);
+  --Opacity-Yellow: rgba(242, 179, 57, 0.5);
+  --Opacity-Cyan: rgba(255, 111, 163, 0.5);
+
+  --Opacity-Black: rgba(0, 0, 0, 0.76);
+}
