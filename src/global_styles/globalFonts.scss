@@ -1,9 +1,9 @@
 // TODO: width 분기에 따라 폰트 설정하기
-@mixin font($fontFamily, $weight, $size, $lineHeight, $color) {
+@mixin font($fontFamily, $weight, $size, $line-height, $color) {
+  color: $color;
   font-weight: $weight;
   font-size: $size;
-  line-height: $lineHeight;
-  color: $color;
+  line-height: $line-height;
 
   // Fontfamily: 'Noto' | 'Inter' | 'Roboto'
   @if ($fontFamily == 'Noto') {

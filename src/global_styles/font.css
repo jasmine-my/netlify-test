@@ -4,68 +4,77 @@
 	font-style: normal;
 	font-weight: 100;
 	font-display: swap;
-	src: url('/assets/fonts/NotoSansKR-Thin.woff2') format('woff2'),
-	url('/assets/fonts/NotoSansKR-Thin.woff') format('woff'),
-	url('/assets/fonts/NotoSansKR-Thin.otf') format('opentype');
+	src: url('../../public/assets/fonts/notosans/NotoSansKR-Thin.woff2') format('woff2'),
+	url('../../public/assets/fonts/notosans/NotoSansKR-Thin.woff') format('woff'),
+	url('../../public/assets/fonts/notosans/NotoSansKR-Thin.otf') format('opentype');
 }
 @font-face {
 	font-family: 'Noto Sans KR';
 	font-style: normal;
 	font-weight: 300;
 	font-display: swap;
-	src: url('/assets/fonts/NotoSansKR-Light.woff2') format('woff2'),
-	url('/assets/fonts/NotoSansKR-Light.woff') format('woff'),
-	url('/assets/fonts/NotoSansKR-Light.otf') format('opentype');
+	src: url('../../public/assets/fonts/notosans/NotoSansKR-Light.woff2') format('woff2'),
+	url('../../public/assets/fonts/notosans/NotoSansKR-Light.woff') format('woff'),
+	url('../../public/assets/fonts/notosans/NotoSansKR-Light.otf') format('opentype');
 }
 @font-face {
 	font-family: 'Noto Sans KR';
 	font-style: normal;
 	font-weight: 400;
 	font-display: swap;
-	src: url('/assets/fonts/NotoSansKR-Regular.woff2') format('woff2'),
-	url('/assets/fonts/NotoSansKR-Regular.woff') format('woff'),
-	url('/assets/fonts/NotoSansKR-Regular.otf') format('opentype');
+	src: url('../../public/assets/fonts/notosans/NotoSansKR-Regular.woff2') format('woff2'),
+	url('../../public/assets/fonts/notosans/NotoSansKR-Regular.woff') format('woff'),
+	url('../../public/assets/fonts/notosans/NotoSansKR-Regular.otf') format('opentype');
 }
 @font-face {
 	font-family: 'Noto Sans KR';
 	font-style: normal;
 	font-weight: 500;
 	font-display: swap;
-	src: url('/assets/fonts/NotoSansKR-Medium.woff2') format('woff2'),
-	url('/assets/fonts/NotoSansKR-Medium.woff') format('woff'),
-	url('/assets/fonts/NotoSansKR-Medium.otf') format('opentype');
+	src: url('../../public/assets/fonts/notosans/NotoSansKR-Medium.woff2') format('woff2'),
+	url('../../public/assets/fonts/notosans/NotoSansKR-Medium.woff') format('woff'),
+	url('../../public/assets/fonts/notosans/NotoSansKR-Medium.otf') format('opentype');
 }
 @font-face {
 	font-family: 'Noto Sans KR';
 	font-style: normal;
 	font-weight: 700;
 	font-display: swap;
-	src: url('/assets/fonts/NotoSansKR-Bold.woff2') format('woff2'),
-	url('/assets/fonts/NotoSansKR-Bold.woff') format('woff'),
-	url('/assets/fonts/NotoSansKR-Bold.otf') format('opentype');
+	src: url('../../public/assets/fonts/notosans/NotoSansKR-Bold.woff2') format('woff2'),
+	url('../../public/assets/fonts/notosans/NotoSansKR-Bold.woff') format('woff'),
+	url('../../public/assets/fonts/notosans/NotoSansKR-Bold.otf') format('opentype');
 }
 @font-face {
 	font-family: 'Noto Sans KR';
 	font-style: normal;
 	font-weight: 900;
 	font-display: swap;
-	src: url('/assets/fonts/NotoSansKR-Black.woff2') format('woff2'),
-	url('/assets/fonts/NotoSansKR-Black.woff') format('woff'),
-	url('/assets/fonts/NotoSansKR-Black.otf') format('opentype');
+	src: url('../../public/assets/fonts/notosans/NotoSansKR-Black.woff2') format('woff2'),
+	url('../../public/assets/fonts/notosans/NotoSansKR-Black.woff') format('woff'),
+	url('../../public/assets/fonts/notosans/NotoSansKR-Black.otf') format('opentype');
 }
 
 /* Roboto */
 @font-face {
 	font-family: 'Roboto';
-	font-weight: 100;
+	font-style: normal;
+	font-weight: 400;
 	font-display: swap;
-	src: local('Pretendard Thin'), url('../../public/assets/fonts/woff2/Pretendard-Thin.woff2') format('woff2'), url('../../public/assets/fonts/woff/Pretendard-Thin.woff') format('woff');
+	src: local('Roboto Regular'), url('../../public/assets/fonts/roboto/Roboto-Regular.ttf') format('ttf')
 }
 
 /* Inter */
 @font-face {
 	font-family: 'Inter';
-	font-weight: 100;
+	font-style: normal;
+	font-weight: 400;
 	font-display: swap;
-	src: local('Pretendard Thin'), url('../../public/assets/fonts/woff2/Pretendard-Thin.woff2') format('woff2'), url('../../public/assets/fonts/woff/Pretendard-Thin.woff') format('woff');
+	src: local('Inter Regular'), url('../../public/assets/fonts/inter/Inter-Regular.ttf') format('ttf')
+}
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: local('Inter Bold'), url('../../public/assets/fonts/inter/Inter-Bold.ttf') format('ttf')
 }

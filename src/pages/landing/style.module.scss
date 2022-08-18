@@ -1,0 +1,7 @@
+@import 'src/global_styles/globalFonts';
+
+.wrapper {
+  .test1 {
+    @include font('Noto',700,65,78, pink);
+  }
+}
