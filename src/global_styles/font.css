@@ -54,15 +54,6 @@
 	url('../../public/assets/fonts/notosans/NotoSansKR-Black.otf') format('opentype');
 }
 
-/* Roboto */
-@font-face {
-	font-family: 'Roboto';
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
-	src: local('Roboto Regular'), url('../../public/assets/fonts/roboto/Roboto-Regular.ttf') format('ttf')
-}
-
 /* Inter */
 @font-face {
 	font-family: 'Inter';

@@ -10,9 +10,9 @@
     font-family: 'Noto Sans', sans-serif;
   } @if ($fontFamily == 'Inter') {
   font-family: 'Inter', sans-serif;
-} @if ($fontFamily == 'Roboto') {
-  font-family: 'Roboto', sans-serif;
-}
+  } @if ($fontFamily == 'Roboto') {
+    font-family: 'Roboto', sans-serif;
+  }
 
   //@if ($Ag == 'Widget-Title') {
   //  font-weight: 400;
