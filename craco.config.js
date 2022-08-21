@@ -1,6 +1,6 @@
 const emotionPresetOptions = {};
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires,no-undef,import/order
+// eslint-disable-next-line @typescript-eslint/no-var-requires,import/order,no-undef
 const emotionBabelPreset = require('@emotion/babel-preset-css-prop').default(
     undefined,
     emotionPresetOptions
@@ -11,6 +11,12 @@ const CracoAlias = require('craco-alias');
 
 // eslint-disable-next-line no-undef
 module.exports = {
+    babel: {
+        plugins: [
+            ...emotionBabelPreset.plugins,
+            // your other plugins
+        ],
+    },
     plugins: [
         {
             plugin: CracoAlias,
@@ -22,7 +28,4 @@ module.exports = {
             },
         },
     ],
-    babel: {
-        plugins: [...emotionBabelPreset.plugins],
-    },
 };

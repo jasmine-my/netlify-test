@@ -1,20 +1,16 @@
 /* Auto Complete */
-
 :root {
-  --PRIME-CYAN: #00ffff;
-  --PRIME-CYAN-DULL: #005858;
-  --SECON-MAGENTA: #ff3ca5;
-  --SECON-MAGENTA-DULE: #5f133c;
-  --THIRD-PURPLE: #6966ff;
-  --FOURTH-GREEN: #a4ff49;
-  --FIFTH-YELLOW: #ff7a00;
-  --WHITE: #ffffff;
-  --GREY-E0: #e0e0e0;
-  --GREY-BD: #bdbdbd;
-  --GREY-99: #999999;
-  --GREY-66: #666666;
-  --GREY-44: #444444;
-  --GREY-3D: #3d3d3d;
-  --GREY-33: #333333;
-  --GREY-2D: #2d2d2d;
+  --SOW-PURPLE: #485CC7;
+  --SOW-BLUE: #489FDF;
+  --SOW-GREEN: #3CDBC0;
+  --SOW-PINK: #DB3EB1;
+
+  --BASIC-NAVY: #0E4174;
+  --BASIC-GREY-1: #333333;
+  --BASIC-GREY-2: #B8B8B8;
+  --BASIC-WHITE: #ffffff;
+
+  --OPACITY-WHITE: rgba(255, 255, 255, 0.6);
+
+  --GRADIENT-BLUE:  linear-gradient(180deg, #485CC7 0%, #489FDF 33%, #485CC7 66%, #489FDF 100%);
 }

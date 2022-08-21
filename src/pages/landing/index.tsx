@@ -1,13 +1,13 @@
+import { css } from '@emotion/react';
 import React from 'react';
-
-import style from './style.module.scss';
-
-import Header from '~/components/header/Header';
 
 export default function Index() {
     return (
-        <div>
-            <Header />
+        <div
+            css={css`
+                background: var(--GRADIENT-BLUE);
+            `}
+        >
             Landing
             <p>Test3</p>
             <p>Test4</p>
