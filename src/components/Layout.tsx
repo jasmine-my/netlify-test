@@ -35,7 +35,7 @@ export default function Layout(props: { children: React.ReactNode }) {
         >
             <Header />
             <div className={'main'}>{props.children}</div>
-            <Footer />
+            {/*<Footer />*/}
         </div>
     );
 }

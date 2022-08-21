@@ -161,3 +161,6 @@ export const mediaQuery = {
 };
 
 export const pcMinWidth = '1400px';
+
+export const mobileHeaderHeight = '71px';
+export const headerHeight = '120px';

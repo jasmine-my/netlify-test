@@ -1,16 +1,19 @@
-import { css } from '@emotion/react';
 import React from 'react';
+import { useMediaQuery } from 'react-responsive';
 
-export default function Index() {
+import Main from '~/components/landing/main';
+import Story from '~/components/landing/story';
+import { mediaQuery } from '~/global_styles/global';
+
+export default function Landing() {
+    const isPC = useMediaQuery({ query: mediaQuery.PC });
+    const isTablet = useMediaQuery({ query: mediaQuery.TABLET });
+    const isMobile = useMediaQuery({ query: mediaQuery.MOBILE });
+
     return (
-        <div
-            css={css`
-                background: var(--GRADIENT-BLUE);
-            `}
-        >
-            Landing
-            <p>Test3</p>
-            <p>Test4</p>
+        <div>
+            <Main isPC={isPC} isTablet={isTablet} isMobile={isMobile} />
+            <Story isPC={isPC} isMobile={isMobile} isTablet={isTablet} />
         </div>
     );
 }

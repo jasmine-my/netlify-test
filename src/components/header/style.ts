@@ -1,6 +1,11 @@
 import { css } from '@emotion/react';
 
-import { font, pcMinWidth } from '~/global_styles/global';
+import {
+    font,
+    headerHeight,
+    mobileHeaderHeight,
+    pcMinWidth,
+} from '~/global_styles/global';
 
 export const headerStyle = (
     isOpenedMenu: boolean,
@@ -22,7 +27,7 @@ export const headerStyle = (
         align-items: center;
         width: ${isTablet || isMobile ? 'auto' : pcMinWidth};
         margin: 0 auto;
-        height: 120px;
+        height: ${isMobile ? mobileHeaderHeight : headerHeight};
         padding: ${isTablet || isMobile ? '0 16px' : '0'};
     }
     .logo {

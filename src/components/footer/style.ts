@@ -14,6 +14,7 @@ export const footerStyle = (
 ) => css`
     position: absolute;
     bottom: 0;
+    left: 0;
     height: ${isPC
         ? pcFooterHeight
         : isTablet
