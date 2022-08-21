@@ -49,7 +49,7 @@ export default function Cindy({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             <p className={'title'}>Who is Cindy</p>
             <div className={'cindy'} />
             <p className={'text'}>
-                Web3 우주공간 입장을 위해{' '}
+                Web3 우주공간 입장을 위해
                 <span className={'extraBold'}>3,500개</span>의 Cindy를
                 배포합니다! <br />
                 아바타 <span className={'bold'}>Cindy</span>는 우주 공간{' '}
