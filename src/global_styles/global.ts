@@ -153,3 +153,11 @@ export const font = (
         ? 'Noto, sans-serif'
         : 'Inter, sans-serif'};
 `;
+
+export const mediaQuery = {
+    PC: '(min-width:1024px)',
+    TABLET: '(min-width:768px) and (max-width:1023px)',
+    MOBILE: '(max-width:767px)',
+};
+
+export const pcMinWidth = '1400px';
