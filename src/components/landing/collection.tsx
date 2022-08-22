@@ -1,5 +1,7 @@
+import { css } from '@emotion/react';
 import React from 'react';
 
+import { landingSectionStyle } from '~/components/landing/cindy';
 import { mediaQueryTypes } from '~/types';
 
 export default function Collection({
@@ -7,5 +9,47 @@ export default function Collection({
     isTablet,
     isMobile,
 }: mediaQueryTypes) {
-    return <>Collection</>;
+    const imageList = [1, 2, 3, 4, 5, 6, 7];
+    const landingCollectionStyle = css`
+        ${landingSectionStyle(isMobile, isTablet)};
+        .carousel {
+            width: 100%;
+            overflow: auto;
+        }
+        .collections {
+            display: flex;
+            gap: 40px;
+            overflow: auto;
+            width: calc(
+                (
+                    ${isMobile ? '274.07px' : '440px'} * ${imageList.length} +
+                        ${isMobile ? '40px' : '24.92px'} *
+                        ${imageList.length + 1}
+                )
+            );
+            .collection {
+                width: 100%;
+                height: ${isMobile ? '274.07px' : '440px'};
+                background: var(--OPACITY-WHITE);
+                border-radius: ${isMobile ? '12.46px' : '20px'};
+            }
+        }
+    `;
+
+    return (
+        <div css={landingCollectionStyle}>
+            <div className={'wrap'}>
+                <p className={'title'}>Collection</p>
+                <div className={'carousel'}>
+                    <ul className={'collections'}>
+                        {imageList.map((value) => (
+                            <li className={'collection'} key={value}>
+                                {value}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    );
 }
