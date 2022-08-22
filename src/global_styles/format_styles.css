@@ -2,6 +2,21 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+html::-webkit-scrollbar {
+    height: 11px;
+    width: 11px;
+    background-color: var(--BASIC-NAVY);
+}
+html::-webkit-scrollbar-track {
+    background: var(--OPACITY-WHITE);
+}
+html::-webkit-scrollbar-thumb {
+     background-color: var(--SOW-PURPLE);
+     background-clip: padding-box;
+     border: 3px solid transparent;
+     border-radius: 10px;
+}
+
 html,
 body,
 div,

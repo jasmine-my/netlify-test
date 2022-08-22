@@ -23,7 +23,7 @@ export default function Layout(props: { children: React.ReactNode }) {
                 justify-content: space-between;
                 min-width: ${isPC ? '1440px' : 0};
                 height: 100vh;
-                padding-bottom: ${isPC
+                margin-bottom: ${isPC
                     ? pcFooterHeight
                     : isTablet
                     ? tabletFooterHeight
@@ -33,9 +33,11 @@ export default function Layout(props: { children: React.ReactNode }) {
                 }
             `}
         >
-            <Header />
-            <div className={'main'}>{props.children}</div>
-            {/*<Footer />*/}
+            <div>
+                <div className={'main'}>{props.children}</div>
+                <Header />
+            </div>
+            <Footer />
         </div>
     );
 }

@@ -60,6 +60,7 @@ export const headerStyle = (
             }
         }
         &.small {
+            z-index: 100;
             background: var(--SOW-PURPLE);
             padding: 61px 0 61px 55px;
             flex-direction: column;

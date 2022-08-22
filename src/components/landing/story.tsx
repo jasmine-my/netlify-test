@@ -10,7 +10,6 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
         background: url(${require('~/images/bg-gradient.svg').default}) center
             center no-repeat;
         background-size: cover;
-        filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.25));
         display: flex;
         justify-content: ${isPC ? 'flex-end' : 'flex-start'};
         align-items: center;
@@ -20,8 +19,13 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             ? '187px 81px'
             : '69px 47px'};
         .text {
+            text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
             .title {
-                ${font('Inter', 700, 65, 78.66, 'var(--BASIC-WHITE)')}
+                ${isMobile
+                    ? font('Inter', 700, 48, 58.09, 'var(--BASIC-WHITE)')
+                    : font('Inter', 700, 65, 78.66, 'var(--BASIC-WHITE)')};
+                margin-bottom: ${isMobile ? '36px' : '80px'};
+                text-align: ${isMobile ? 'center' : 'left'};
             }
             .description {
                 ${font('Noto', 400, 16, 36, 'var(--BASIC-WHITE)')}

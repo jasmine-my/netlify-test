@@ -12,9 +12,6 @@ export const footerStyle = (
     isTablet: boolean,
     isMobile: boolean
 ) => css`
-    position: absolute;
-    bottom: 0;
-    left: 0;
     height: ${isPC
         ? pcFooterHeight
         : isTablet
@@ -25,7 +22,6 @@ export const footerStyle = (
     display: flex;
     justify-content: space-between;
     align-items: center;
-    //padding: 0 260px 0 240px;
     .left {
         display: flex;
         align-items: ${isPC ? 'center' : 'flex-starts'};
