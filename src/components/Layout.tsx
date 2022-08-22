@@ -12,7 +12,7 @@ import { mediaQuery } from '~/global_styles/global';
 
 export default function Layout(props: { children: React.ReactNode }) {
     const isPC = useMediaQuery({ query: mediaQuery.PC });
-    const isTable = useMediaQuery({ query: mediaQuery.TABLET });
+    const isTablet = useMediaQuery({ query: mediaQuery.TABLET });
 
     return (
         <div
@@ -25,7 +25,7 @@ export default function Layout(props: { children: React.ReactNode }) {
                 height: 100vh;
                 padding-bottom: ${isPC
                     ? pcFooterHeight
-                    : isTable
+                    : isTablet
                     ? tabletFooterHeight
                     : mobileFooterHeight};
                 .main {

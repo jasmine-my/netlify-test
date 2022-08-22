@@ -60,12 +60,12 @@
 	font-style: normal;
 	font-weight: 400;
 	font-display: swap;
-	src: local('Inter Regular'), url('../../public/assets/fonts/inter/Inter-Regular.ttf') format('ttf')
+	src: url('../../public/assets/fonts/inter/Inter-Regular.ttf');
 }
 @font-face {
 	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 700;
 	font-display: swap;
-	src: local('Inter Bold'), url('../../public/assets/fonts/inter/Inter-Bold.ttf') format('ttf')
+	src: url('../../public/assets/fonts/inter/Inter-Bold.ttf');
 }

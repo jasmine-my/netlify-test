@@ -8,7 +8,7 @@ export interface IconProps {
 const Icon = styled.span<IconProps>`
     width: ${(props) => props.size}px;
     height: ${(props) => props.size}px;
-    background-image: url('assets/images/${(props) => props.name}.svg');
+    background-image: url('assets/icons/${(props) => props.name}.svg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto 100%;

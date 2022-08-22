@@ -150,7 +150,7 @@ export const font = (
     font-size: ${size}px;
     line-height: ${lineHeight}px;
     font-family: ${fontFamily === 'Noto'
-        ? 'Noto, sans-serif'
+        ? 'Noto Sans KR, sans-serif'
         : 'Inter, sans-serif'};
 `;
 
