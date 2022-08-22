@@ -6,14 +6,15 @@ import { mediaQueryTypes } from '~/types';
 
 export default function Main({ isPC, isTablet, isMobile }: mediaQueryTypes) {
     const landingMainStyle = css`
-        background: url('/assets/images/bg-planet.svg') top center no-repeat;
+        background: url(${require('~/images/bg-planet.svg').default}) top center
+            no-repeat;
         background-size: cover;
         padding-top: ${isMobile ? mobileHeaderHeight : headerHeight};
         text-align: center;
         .mainLogo {
             background: url(${isMobile
-                    ? '/assets/images/logo-full-small.svg'
-                    : '/assets/images/logo-full-large.svg'})
+                    ? require('~/images/logo-full-small.svg').default
+                    : require('~/images/logo-full-large.svg').default})
                 center center no-repeat;
             background-size: contain;
             width: ${isPC ? '1407px' : isTablet ? '707px' : '313px'};

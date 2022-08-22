@@ -5,6 +5,7 @@ import { useMediaQuery } from 'react-responsive';
 import { headerStyle, snsIconStyle } from '~/components/header/style';
 import Icon from '~/components/icon/Icon';
 import { mediaQuery } from '~/global_styles/global';
+import HeaderLogo from '~/images/logo-header.svg';
 
 export default function Header() {
     const isPC = useMediaQuery({ query: mediaQuery.PC });
@@ -16,11 +17,7 @@ export default function Header() {
     return (
         <div css={headerStyle(isOpenedMenu, isTable, isMobile)}>
             <div className={'wrap'}>
-                <img
-                    className={'logo'}
-                    src="/assets/images/logo-header.svg"
-                    alt="header-logo"
-                />
+                <img className={'logo'} src={HeaderLogo} alt="header-logo" />
 
                 {isPC && (
                     <div className={'contents'}>

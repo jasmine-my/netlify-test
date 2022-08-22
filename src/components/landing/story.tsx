@@ -7,8 +7,8 @@ import { mediaQueryTypes } from '~/types';
 
 export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
     const landingStoryStyle = css`
-        background: url('/assets/images/bg-gradient.svg') center center
-            no-repeat;
+        background: url(${require('~/images/bg-gradient.svg').default}) center
+            center no-repeat;
         background-size: cover;
         filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.25));
         display: flex;

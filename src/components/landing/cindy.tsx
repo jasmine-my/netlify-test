@@ -10,7 +10,8 @@ export default function Cindy({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             ${font('Inter', 700, 65, 78.66, 'var(--BASIC-WHITE)')}
         }
         .cindy {
-            background: url('/assets/images/cindy.svg') center center no-repeat;
+            background: url(${require('~/images/cindy.svg').default}) center
+                center no-repeat;
             width: 310px;
             height: 310px;
             filter: drop-shadow(0px 10px 50px rgba(14, 60, 116, 0.4));

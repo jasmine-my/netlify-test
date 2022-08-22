@@ -2,6 +2,11 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    node: true,
+    amd: true
+  },
+  globals: {
+    require: true,
   },
   extends: [
     "eslint:recommended",
@@ -33,6 +38,7 @@ module.exports = {
   plugins: ["react", "@typescript-eslint", "prettier"],
   rules: {
     "no-unused-vars": "off",
+    '@typescript-eslint/no-var-requires': 'off',
     "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/no-empty-function": "off",
     "sort-imports": [
