@@ -8,30 +8,33 @@ export default function Main({ isPC, isTablet, isMobile }: mediaQueryTypes) {
     const landingMainStyle = css`
         background: url(${require('~/images/bg-planet.svg').default}) top center
             no-repeat;
-        background-size: cover;
+        background-attachment: fixed;
         padding-top: ${isMobile ? mobileHeaderHeight : headerHeight};
         text-align: center;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        .wrap {
+            width: ${isPC ? '73%' : isTablet ? '90%' : '91%'};
+            padding-bottom: ${isPC ? '3%' : '10%'};
+        }
         .mainLogo {
             background: url(${isMobile
                     ? require('~/images/logo-full-small.svg').default
                     : require('~/images/logo-full-large.svg').default})
                 center center no-repeat;
             background-size: contain;
-            width: ${isPC ? '1407px' : isTablet ? '707px' : '313px'};
-            height: ${isPC ? '96px' : isTablet ? '74px' : '179px'};
+            width: ${isMobile ? '95%' : '100%'};
+            height: ${isPC ? '96px' : isTablet ? '74px' : '300px'};
             margin: ${isPC
-                ? '384px auto 84px auto'
+                ? '0 auto 84px auto'
                 : isTablet
-                ? '428px auto 88px auto'
-                : '63px 16px 79px 16px'};
+                ? '0 auto 88px auto'
+                : '0 0 79px 0'};
         }
         .text {
             margin: 0 auto;
-            padding: ${isPC
-                ? '16px 16px 19px 16px'
-                : isTablet
-                ? '16px 16px 153px 16px '
-                : '16px 16px 61px 16px'};
             position: relative;
             .mission {
                 ${isPC
@@ -48,25 +51,27 @@ export default function Main({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                 backdrop-filter: blur(20px);
                 border-radius: 10px;
                 padding: ${isMobile ? '21.5px 25px' : '22.5px 34px'};
-                width: ${isPC ? '728px' : '100%'};
+                width: ${isPC ? '728px' : isTablet ? '96%' : '100%'};
                 ${font('Noto', 700, isPC ? 16 : 14, 28, 'var(--BASIC-WHITE)')}
             }
         }
     `;
     return (
         <div css={landingMainStyle}>
-            <div className={'mainLogo'} />
-            <div className={'text'}>
-                <p className={'mission'}>
-                    Creative space {isMobile && <br />} empowering <br /> all
-                    the female creators{' '}
-                </p>
-                <p className={'description'}>
-                    Art와 Technology의 교차점에 있는 NFT 시장에서 여성 창작자의
-                    매출 비중은 5%에 불과합니다.
-                    {!isMobile && <br />} 포용적인 NFT 시장을 만들기 위해 여성
-                    창작자 간 네트워킹과 협업을 지원합니다.
-                </p>
+            <div className={'wrap'}>
+                <div className={'mainLogo'} />
+                <div className={'text'}>
+                    <p className={'mission'}>
+                        Creative space {isMobile && <br />} empowering <br />{' '}
+                        all the female creators{' '}
+                    </p>
+                    <p className={'description'}>
+                        Art와 Technology의 교차점에 있는 NFT 시장에서 여성
+                        창작자의 매출 비중은 5%에 불과합니다.
+                        {!isMobile && <br />} 포용적인 NFT 시장을 만들기 위해
+                        여성 창작자 간 네트워킹과 협업을 지원합니다.
+                    </p>
+                </div>
             </div>
         </div>
     );
