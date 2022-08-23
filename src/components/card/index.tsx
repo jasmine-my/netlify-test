@@ -14,7 +14,7 @@ const Card = styled.div<ICardProps>`
     overflow: hidden;
     background: var(--OPACITY-WHITE);
     border-radius: ${(props) => (props.isMobile ? '14px' : '20px')};
-    border: 3px solid pink;
+    border: 2px solid var(--SOW-GREEN);
     position: relative;
     box-sizing: border-box;
 
@@ -29,11 +29,11 @@ const Card = styled.div<ICardProps>`
 
     :hover {
         background: var(--BASIC-WHITE);
-        border-color: #0e4174;
+        border-color: var(--SOW-PINK);
         transform: scale(0.98);
         box-shadow: 0 0 5px -2px rgba(0, 0, 0, 0.3);
         cursor: pointer;
-        transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+        transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
         .cardTitle {
             transform: translateY(5px);
             transition: all 900ms cubic-bezier(0.19, 1, 0.22, 1);
