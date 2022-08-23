@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { Link } from 'react-scroll';
 
@@ -7,6 +7,7 @@ import { headerStyle, snsIconStyle } from '~/components/header/style';
 import Icon from '~/components/icon/Icon';
 import { mediaQuery } from '~/global_styles/global';
 import HeaderLogo from '~/images/logo-header.svg';
+import useGetScrollPosition from '~/useHooks/useGetScrollPosition';
 
 export default function Header() {
     const isPC = useMediaQuery({ query: mediaQuery.PC });
@@ -14,6 +15,10 @@ export default function Header() {
     const isMobile = useMediaQuery({ query: mediaQuery.MOBILE });
 
     const [isOpenedMenu, setIsOpenedMenu] = useState(false);
+    const { scrollPosition } = useGetScrollPosition();
+    useEffect(() => {
+        if (scrollPosition > 0) setIsOpenedMenu(false);
+    }, [scrollPosition]);
 
     const menus = [
         { id: 'story', title: 'Story' },
@@ -38,6 +43,7 @@ export default function Header() {
                                     to={menu.id}
                                     spy={true}
                                     smooth={true}
+                                    offset={menu.id === 'roadmap' ? -60 : 0}
                                 >
                                     <li>{menu.title}</li>
                                 </Link>
