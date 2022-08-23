@@ -34,6 +34,14 @@ const Card = styled.div<ICardProps>`
         box-shadow: 0 0 5px -2px rgba(0, 0, 0, 0.3);
         cursor: pointer;
         transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+        .cardTitle {
+            transform: translateY(5px);
+            transition: all 900ms cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .checkItems {
+            transform: translateY(-5px);
+            transition: all 900ms cubic-bezier(0.19, 1, 0.22, 1);
+        }
     }
 `;
 export default Card;

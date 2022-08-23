@@ -17,28 +17,30 @@ export default function Footer() {
 
     return (
         <div css={footerStyle(isPC, isTablet, isMobile)}>
-            <div className={'left'}>
-                <img
-                    className={'logo'}
-                    src="/assets/images/logo-footer.svg"
-                    alt="logo-footer"
-                />
-                <ul className={'copyright'}>
-                    <li>space_of_woman@gmail.com</li>
-                    <li>Copyright © SpaceOfWoman</li>
+            <div className={'wrap'}>
+                <div className={'left'}>
+                    <img
+                        className={'logo'}
+                        src={require('~/images/logo-footer.svg').default}
+                        alt="logo-footer"
+                    />
+                    <ul className={'copyright'}>
+                        <li>space_of_woman@gmail.com</li>
+                        <li>Copyright © SpaceOfWoman</li>
+                    </ul>
+                </div>
+                <ul css={snsIconStyle} className={'snsIcons'}>
+                    <li>
+                        <Icon size={32} name={'sns-instagram'} />
+                    </li>
+                    <li>
+                        <Icon size={32} name={'sns-discord'} />
+                    </li>
+                    <li>
+                        <Icon size={32} name={'sns-twitter'} />
+                    </li>
                 </ul>
             </div>
-            <ul css={snsIconStyle} className={'snsIcons'}>
-                <li>
-                    <Icon size={32} name={'sns-instagram'} />
-                </li>
-                <li>
-                    <Icon size={32} name={'sns-discord'} />
-                </li>
-                <li>
-                    <Icon size={32} name={'sns-twitter'} />
-                </li>
-            </ul>
         </div>
     );
 }

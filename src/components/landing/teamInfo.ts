@@ -28,7 +28,7 @@ export const team: Array<IMemberCardProps> = [
     {
         index: 5,
         name: 'Yeco',
-        jd: 'Web Frontend Developer',
+        jd: 'Frontend Developer',
         experience: "Sookmyung Women's University",
     },
     {

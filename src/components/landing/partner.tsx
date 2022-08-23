@@ -28,11 +28,11 @@ export default function Partner({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             <div className={'wrap'}>
                 <p className={'title'}>Partner</p>
                 <div className={'partners'}>
-                    <div>1</div>
-                    <div>2</div>
-                    <div>3</div>
-                    <div>4</div>
-                    <div>5</div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
                 </div>
             </div>
         </div>

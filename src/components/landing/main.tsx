@@ -25,18 +25,32 @@ export default function Main({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                     : require('~/images/logo-full-large.svg').default})
                 center center no-repeat;
             background-size: contain;
-            width: ${isMobile ? '95%' : '100%'};
+            width: ${isMobile ? '70%' : '100%'};
             height: ${isPC ? '96px' : isTablet ? '74px' : '300px'};
             margin: ${isPC
                 ? '0 auto 84px auto'
                 : isTablet
                 ? '0 auto 88px auto'
-                : '0 0 79px 0'};
+                : '0 0 10px 0'};
+            animation: bottom-to-top 1.5s 1s cubic-bezier(0.5, 0, 0.1, 1) both;
+            @keyframes bottom-to-top {
+                from {
+                    opacity: 0;
+                    transform: translateY(50%);
+                }
+                to {
+                    opacity: 1;
+                    transform: none;
+                }
+            }
         }
         .text {
             margin: 0 auto;
             position: relative;
+
             .mission {
+                animation: bottom-to-top 1.5s 1.2s cubic-bezier(0.5, 0, 0.1, 1)
+                    both;
                 ${isPC
                     ? font('Inter', 700, 50, 70, 'var(--BASIC-WHITE)')
                     : isTablet
@@ -44,6 +58,8 @@ export default function Main({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                     : font('Inter', 700, 30, 36.31, 'var(--BASIC-WHITE)')}
             }
             .description {
+                animation: bottom-to-top 1.5s 1.5s cubic-bezier(0.5, 0, 0.1, 1)
+                    both;
                 margin: 0 auto;
                 margin-top: ${isPC ? '36px' : isTablet ? '32px' : '20px'};
                 background: rgba(14, 60, 116, 0.4);

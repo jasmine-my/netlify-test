@@ -17,6 +17,7 @@ export default function MemberCard({
     jd,
     experience,
 }: IMemberCardProps) {
+    const isTablet = useMediaQuery({ query: mediaQuery.TABLET });
     const isMobile = useMediaQuery({ query: mediaQuery.MOBILE });
 
     return (
@@ -27,11 +28,28 @@ export default function MemberCard({
                 border-radius: 20px;
                 overflow: hidden;
                 display: grid;
-                grid-template-columns: repeat(1, 1fr);
-                grid-template-rows: repeat(1, 1fr);
+                grid-template-columns: repeat(
+                    ${isMobile ? '326px' : isTablet ? '435px' : '300px'} auto
+                );
+                background-color: var(--BASIC-NAVY);
+
+                :hover {
+                    transform: scale(0.98);
+                    box-shadow: 0 0 5px -2px rgba(0, 0, 0, 0.3);
+                    cursor: pointer;
+                    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+                    .contents {
+                        transform: translateY(-10px);
+                        transition: all 900ms cubic-bezier(0.19, 1, 0.22, 1);
+                    }
+                }
                 .profileImage {
                     width: 100%;
-                    height: ${isMobile ? '326px' : '464px'};
+                    height: ${isMobile
+                        ? '326px'
+                        : isTablet
+                        ? '435px'
+                        : '300px'};
                     background-image: url('assets/images/profile-${index}.svg');
                     background-position: center center;
                     background-size: cover;
@@ -42,7 +60,6 @@ export default function MemberCard({
                 .contents {
                     width: 100%;
                     height: 100%;
-                    background: var(--BASIC-NAVY);
                     text-align: center;
                     padding: ${isMobile ? '36px 16px' : '52px 47.5px'};
                     .memberName {

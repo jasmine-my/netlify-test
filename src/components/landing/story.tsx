@@ -1,9 +1,10 @@
 import { css } from '@emotion/react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Icon from '~/components/icon/Icon';
 import { font } from '~/global_styles/global';
 import { mediaQueryTypes } from '~/types';
+import useGetScrollPosition from '~/useHooks/useGetScrollPosition';
 
 export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
     const landingStoryStyle = css`
@@ -40,6 +41,8 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             }
         }
     `;
+
+    const { scrollPosition } = useGetScrollPosition();
 
     return (
         <div css={landingStoryStyle}>
