@@ -1,12 +1,9 @@
 const emotionPresetOptions = {};
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires,import/order,no-undef
 const emotionBabelPreset = require('@emotion/babel-preset-css-prop').default(
     undefined,
     emotionPresetOptions
 );
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires,no-undef
 const CracoAlias = require('craco-alias');
 
 // eslint-disable-next-line no-undef
