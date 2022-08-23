@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 import React, { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { Link } from 'react-scroll';
 
 import { headerStyle, snsIconStyle } from '~/components/header/style';
 import Icon from '~/components/icon/Icon';
@@ -14,6 +15,15 @@ export default function Header() {
 
     const [isOpenedMenu, setIsOpenedMenu] = useState(false);
 
+    const menus = [
+        { id: 'story', title: 'Story' },
+        { id: 'collection', title: 'Collection' },
+        { id: 'roadmap', title: 'Roadmap' },
+        { id: 'benefit', title: 'Benefit' },
+        { id: 'team', title: 'Team' },
+        { id: 'partner', title: 'Partner' },
+    ];
+
     return (
         <div css={headerStyle(isOpenedMenu, isTable, isMobile)}>
             <div className={'wrap'}>
@@ -22,12 +32,16 @@ export default function Header() {
                 {isPC && (
                     <div className={'contents'}>
                         <ul className={'gnbItems'}>
-                            <li>Story</li>
-                            <li>Collection</li>
-                            <li>Roadmap</li>
-                            <li>Benefit</li>
-                            <li>Team</li>
-                            <li>Partner</li>
+                            {menus.map((menu) => (
+                                <Link
+                                    key={`menu-${menu.id}`}
+                                    to={menu.id}
+                                    spy={true}
+                                    smooth={true}
+                                >
+                                    <li>{menu.title}</li>
+                                </Link>
+                            ))}
                         </ul>
                         <ul css={snsIconStyle}>
                             <li>
@@ -57,13 +71,17 @@ export default function Header() {
                 )}
             </div>
             {(isTable || isMobile) && isOpenedMenu && (
-                <ul className={`gnbItems small`}>
-                    <li>Story</li>
-                    <li>Collection</li>
-                    <li>Roadmap</li>
-                    <li>Benefit</li>
-                    <li>Team</li>
-                    <li>Partner</li>
+                <ul className={'gnbItems small'}>
+                    {menus.map((menu) => (
+                        <Link
+                            key={menu.id}
+                            to={menu.id}
+                            spy={true}
+                            smooth={true}
+                        >
+                            <li>{menu.title}</li>
+                        </Link>
+                    ))}
                 </ul>
             )}
         </div>

@@ -22,7 +22,7 @@ export default function Benefit({ isPC, isTablet, isMobile }: mediaQueryTypes) {
     return (
         <div css={landingBenefitStyle}>
             <div className={'wrap'}>
-                <p className={'title'}>RoadMap</p>
+                <p className={'title'}>Benefit</p>
                 <div className={'cards'}>
                     <Card isMobile={isMobile}>
                         <div>

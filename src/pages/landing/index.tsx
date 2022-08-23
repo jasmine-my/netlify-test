@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 import React from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { Element } from 'react-scroll';
 
 import Benefit from '~/components/landing/benefit';
 import Cindy from '~/components/landing/cindy';
@@ -19,23 +20,49 @@ export default function Landing() {
 
     return (
         <div>
-            <Main isPC={isPC} isTablet={isTablet} isMobile={isMobile} />
-            <Story isPC={isPC} isMobile={isMobile} isTablet={isTablet} />
+            <Element name={'main'}>
+                <Main isPC={isPC} isTablet={isTablet} isMobile={isMobile} />
+            </Element>
+            <Element name={'story'}>
+                <Story isPC={isPC} isMobile={isMobile} isTablet={isTablet} />
+            </Element>
             <div
                 css={css`
                     background: var(--GRADIENT-BLUE);
                 `}
             >
                 <Cindy isPC={isPC} isTablet={isTablet} isMobile={isMobile} />
-                <Collection
-                    isPC={isPC}
-                    isTablet={isTablet}
-                    isMobile={isMobile}
-                />
-                <RoadMap isPC={isPC} isTablet={isTablet} isMobile={isMobile} />
-                <Benefit isPC={isPC} isTablet={isTablet} isMobile={isMobile} />
-                <Team isPC={isPC} isTablet={isTablet} isMobile={isMobile} />
-                <Partner isPC={isPC} isTablet={isTablet} isMobile={isMobile} />
+                <Element name={'collection'}>
+                    <Collection
+                        isPC={isPC}
+                        isTablet={isTablet}
+                        isMobile={isMobile}
+                    />
+                </Element>
+                <Element name={'roadmap'}>
+                    <RoadMap
+                        isPC={isPC}
+                        isTablet={isTablet}
+                        isMobile={isMobile}
+                    />
+                </Element>
+                <Element name={'benefit'}>
+                    <Benefit
+                        isPC={isPC}
+                        isTablet={isTablet}
+                        isMobile={isMobile}
+                    />
+                </Element>
+                <Element name={'team'}>
+                    <Team isPC={isPC} isTablet={isTablet} isMobile={isMobile} />
+                </Element>
+                <Element name={'partner'}>
+                    <Partner
+                        isPC={isPC}
+                        isTablet={isTablet}
+                        isMobile={isMobile}
+                    />
+                </Element>
             </div>
         </div>
     );
