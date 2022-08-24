@@ -5,6 +5,7 @@ import { footerStyle } from '~/components/footer/style';
 import { snsIconStyle } from '~/components/header/style';
 import Icon from '~/components/icon/Icon';
 import { mediaQuery } from '~/global_styles/global';
+import { urlInfo } from '~/information/urlInfo';
 
 export const pcFooterHeight = '144px';
 export const tabletFooterHeight = '258px';
@@ -30,15 +31,15 @@ export default function Footer() {
                     </ul>
                 </div>
                 <ul css={snsIconStyle} className={'snsIcons'}>
-                    <li>
-                        <Icon size={32} name={'sns-instagram'} />
-                    </li>
-                    <li>
-                        <Icon size={32} name={'sns-discord'} />
-                    </li>
-                    <li>
-                        <Icon size={32} name={'sns-twitter'} />
-                    </li>
+                    {urlInfo.map((sns) => (
+                        <li key={sns.name}>
+                            <Icon
+                                size={32}
+                                name={`sns-${sns.name}`}
+                                onClick={() => window.open(sns.url)}
+                            />
+                        </li>
+                    ))}
                 </ul>
             </div>
         </div>

@@ -7,6 +7,7 @@ import { headerStyle, snsIconStyle } from '~/components/header/style';
 import Icon from '~/components/icon/Icon';
 import { mediaQuery } from '~/global_styles/global';
 import HeaderLogo from '~/images/logo-header.svg';
+import { urlInfo } from '~/information/urlInfo';
 import useGetScrollPosition from '~/useHooks/useGetScrollPosition';
 
 export default function Header() {
@@ -50,15 +51,15 @@ export default function Header() {
                             ))}
                         </ul>
                         <ul css={snsIconStyle}>
-                            <li>
-                                <Icon size={32} name={'sns-instagram'} />
-                            </li>
-                            <li>
-                                <Icon size={32} name={'sns-discord'} />
-                            </li>
-                            <li>
-                                <Icon size={32} name={'sns-twitter'} />
-                            </li>
+                            {urlInfo.map((sns) => (
+                                <li key={sns.name}>
+                                    <Icon
+                                        size={32}
+                                        name={`sns-${sns.name}`}
+                                        onClick={() => window.open(sns.url)}
+                                    />
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 )}

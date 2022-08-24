@@ -3,8 +3,8 @@ import React from 'react';
 
 import MemberCard from '~/components/card/memberCard';
 import { landingSectionStyle } from '~/components/landing/cindy';
-import { team } from '~/components/landing/teamInfo';
 import { font } from '~/global_styles/global';
+import { team } from '~/information/teamInfo';
 import { mediaQueryTypes } from '~/types';
 
 export default function Team({ isPC, isTablet, isMobile }: mediaQueryTypes) {
