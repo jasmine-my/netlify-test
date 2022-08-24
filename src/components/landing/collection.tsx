@@ -1,25 +1,30 @@
 import { css } from '@emotion/react';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import HorizontalScroll from 'react-scroll-horizontal';
 
 import { landingSectionStyle } from '~/components/landing/cindy';
 import { mediaQueryTypes } from '~/types';
+import { useHorizontalScroll } from '~/useHooks/useHorizontalScroll';
 
 export default function Collection({
     isPC,
     isTablet,
     isMobile,
 }: mediaQueryTypes) {
-    const imageList = [1, 2, 3, 4, 5, 6, 7];
+    const imageList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     const landingCollectionStyle = css`
         ${landingSectionStyle(isMobile, isTablet)};
+        .wrap {
+            width: 100%;
+            height: ${isMobile ? '300px' : '450px'};
+        }
         .carousel {
             width: 100%;
-            overflow: auto;
+            height: 100%;
         }
         .collections {
             display: flex;
             gap: 40px;
-            overflow: auto;
             width: calc(
                 (
                     ${isMobile ? '274.07px' : '440px'} * ${imageList.length} +
@@ -41,13 +46,29 @@ export default function Collection({
             <div className={'wrap'}>
                 <p className={'title'}>Collection</p>
                 <div className={'carousel'}>
-                    <ul className={'collections'}>
-                        {imageList.map((value) => (
-                            <li className={'collection'} key={value}>
-                                {value}
-                            </li>
-                        ))}
-                    </ul>
+                    <HorizontalScroll
+                        pageLock={true}
+                        reverseScroll={true}
+                        style={{
+                            width: '100%',
+                            height: '100%',
+                            display: 'flex',
+                            gap: '40px',
+                            overflowX: 'auto',
+                        }}
+                        css={css`
+                            ::-webkit-scrollbar {
+                                height: 0;
+                                width: 0;
+                            }
+                        `}
+                    >
+                        <ul className={'collections'}>
+                            {imageList.map((value) => (
+                                <div className={'collection'} key={value} />
+                            ))}
+                        </ul>
+                    </HorizontalScroll>
                 </div>
             </div>
         </div>
