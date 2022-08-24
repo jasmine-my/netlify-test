@@ -1,10 +1,13 @@
 import { css } from '@emotion/react';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import Draggable, { DraggableData } from 'react-draggable';
 
 import Icon from '~/components/icon/Icon';
 import { font } from '~/global_styles/global';
+import Jupiter from '~/images/planet-jupiter.svg';
+import Mars from '~/images/planet-mars.svg';
+import Saturn from '~/images/planet-saturn.svg';
 import { mediaQueryTypes } from '~/types';
-import useGetScrollPosition from '~/useHooks/useGetScrollPosition';
 
 export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
     const landingStoryStyle = css`
@@ -14,13 +17,52 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
         display: flex;
         justify-content: ${isPC ? 'flex-end' : 'flex-start'};
         align-items: center;
-        padding: ${isPC
-            ? '187px 258px'
-            : isTablet
-            ? '187px 81px'
-            : '69px 47px'};
+        padding: ${isPC ? '187px 20%' : isTablet ? '187px 81px' : '69px 47px'};
+        position: relative;
+
+        .planet {
+            position: absolute;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 1;
+            &.saturn {
+                left: ${isPC ? '8%' : isTablet ? '-40%' : '-100%'};
+                background: url(${require('~/images/planet-saturn.svg')
+                        .default})
+                    no-repeat center center;
+                background-size: contain;
+                width: 500px;
+                height: 500px;
+                border-radius: 0;
+            }
+
+            &.jupiter {
+                right: ${isPC ? '0' : isTablet ? '-50%' : '100%'};
+                top: -50px;
+                background: url(${require('~/images/planet-jupiter.svg')
+                        .default})
+                    no-repeat center center;
+                background-size: contain;
+                width: 740px;
+                height: 740px;
+            }
+
+            &.mars {
+                right: 5%;
+                bottom: ${isPC ? '25%' : isTablet ? '20%' : '100%'};
+                background: url(${require('~/images/planet-mars.svg').default})
+                    no-repeat center center;
+                background-size: contain;
+                width: 300px;
+                height: 300px;
+            }
+        }
+
         .text {
+            z-index: 1;
             text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+            z-index: 2;
+
             .title {
                 ${isMobile
                     ? font('Inter', 700, 48, 58.09, 'var(--BASIC-WHITE)')
@@ -28,12 +70,14 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                 margin-bottom: ${isMobile ? '36px' : '80px'};
                 text-align: ${isMobile ? 'center' : 'left'};
             }
+
             .description {
                 ${font('Noto', 400, 16, 36, 'var(--BASIC-WHITE)')}
                 .bold {
                     ${font('Noto', 700, 16, 36, 'var(--BASIC-WHITE)')}
                 }
             }
+
             .list {
                 ${font('Noto', 600, 20, 38, 'var(--BASIC-WHITE)')}
                 .checkIcon {
@@ -42,10 +86,47 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
         }
     `;
 
-    const { scrollPosition } = useGetScrollPosition();
+    const nodeRef = useRef(null);
+    const [position, setPosition] = useState({ x: 0, y: 0 });
+    const [position2, setPosition2] = useState({ x: 50, y: 50 });
+
+    const trackPos = (data: DraggableData) => {
+        setPosition({ x: data.x, y: data.y });
+    };
+
+    const trackPos2 = (data: { x: any; y: any }) => {
+        setPosition2({ x: data.x, y: data.y });
+    };
 
     return (
         <div css={landingStoryStyle}>
+            <Draggable nodeRef={nodeRef} onDrag={(e, data) => trackPos(data)}>
+                <div ref={nodeRef} className={'planet saturn'}>
+                    {/*<img src={Saturn} alt="planet-image-saturn" width={492} />*/}
+                </div>
+            </Draggable>
+            <Draggable nodeRef={nodeRef} onDrag={(e, data) => trackPos(data)}>
+                <div ref={nodeRef} className={'planet jupiter'}>
+                    {/*<img src={Saturn} alt="planet-image-saturn" width={492} />*/}
+                </div>
+            </Draggable>
+            <Draggable nodeRef={nodeRef} onDrag={(e, data) => trackPos(data)}>
+                <div ref={nodeRef} className={'planet mars'}>
+                    {/*<img src={Saturn} alt="planet-image-saturn" width={492} />*/}
+                </div>
+            </Draggable>
+            {/*<img*/}
+            {/*    src={Jupiter}*/}
+            {/*    className={'planet jupiter'}*/}
+            {/*    alt="planet-image-jupiter"*/}
+            {/*    width={747}*/}
+            {/*/>*/}
+            {/*<img*/}
+            {/*    src={Mars}*/}
+            {/*    className={'planet mars'}*/}
+            {/*    alt="planet-image-mars"*/}
+            {/*    width={310}*/}
+            {/*/>*/}
             <div className={'text'}>
                 <p className={'title'}>SOW Story</p>
                 <p className={'description'}>

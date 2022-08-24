@@ -12,6 +12,7 @@ export const headerStyle = (
     isTablet: boolean,
     isMobile: boolean
 ) => css`
+    z-index: 3;
     background-color: ${isOpenedMenu
         ? 'var(--BASIC-WHITE)'
         : 'var(--OPACITY-WHITE)'};
@@ -73,9 +74,5 @@ export const snsIconStyle = css`
     gap: 10px;
     li {
         cursor: pointer;
-        :hover {
-            transform: translateY(-5px);
-            transition: all 0.2s ease-in;
-        }
     }
 `;
