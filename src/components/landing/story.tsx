@@ -1,12 +1,10 @@
 import { css } from '@emotion/react';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Draggable, { DraggableData } from 'react-draggable';
 
+import CheckItem from '~/components/checkItem';
 import Icon from '~/components/icon/Icon';
 import { font } from '~/global_styles/global';
-import Jupiter from '~/images/planet-jupiter.svg';
-import Mars from '~/images/planet-mars.svg';
-import Saturn from '~/images/planet-saturn.svg';
 import { mediaQueryTypes } from '~/types';
 
 export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
@@ -48,8 +46,8 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             }
 
             &.mars {
-                right: 5%;
-                bottom: ${isPC ? '25%' : isTablet ? '20%' : '100%'};
+                right: ${isMobile ? '100%' : '5%'};
+                bottom: ${isPC ? '10%' : isTablet ? '20%' : '0'};
                 background: url(${require('~/images/planet-mars.svg').default})
                     no-repeat center center;
                 background-size: contain;
@@ -59,7 +57,6 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
         }
 
         .text {
-            z-index: 1;
             text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
             z-index: 2;
 
@@ -78,55 +75,32 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                 }
             }
 
-            .list {
-                ${font('Noto', 600, 20, 38, 'var(--BASIC-WHITE)')}
-                .checkIcon {
+            .checkList {
+                margin: ${isMobile ? '36px 0' : '48px 0'};
+                ${font('Noto', 600, 20, 38, 'var(--BASIC-WHITE)')};
+                li {
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    gap: ${isMobile ? '8px' : '12px'};
                 }
             }
         }
     `;
 
     const nodeRef = useRef(null);
-    const [position, setPosition] = useState({ x: 0, y: 0 });
-    const [position2, setPosition2] = useState({ x: 50, y: 50 });
-
-    const trackPos = (data: DraggableData) => {
-        setPosition({ x: data.x, y: data.y });
-    };
-
-    const trackPos2 = (data: { x: any; y: any }) => {
-        setPosition2({ x: data.x, y: data.y });
-    };
 
     return (
         <div css={landingStoryStyle}>
-            <Draggable nodeRef={nodeRef} onDrag={(e, data) => trackPos(data)}>
-                <div ref={nodeRef} className={'planet saturn'}>
-                    {/*<img src={Saturn} alt="planet-image-saturn" width={492} />*/}
-                </div>
+            <Draggable nodeRef={nodeRef}>
+                <div ref={nodeRef} className={'planet saturn'} />
             </Draggable>
-            <Draggable nodeRef={nodeRef} onDrag={(e, data) => trackPos(data)}>
-                <div ref={nodeRef} className={'planet jupiter'}>
-                    {/*<img src={Saturn} alt="planet-image-saturn" width={492} />*/}
-                </div>
+            <Draggable nodeRef={nodeRef}>
+                <div ref={nodeRef} className={'planet jupiter'} />
             </Draggable>
-            <Draggable nodeRef={nodeRef} onDrag={(e, data) => trackPos(data)}>
-                <div ref={nodeRef} className={'planet mars'}>
-                    {/*<img src={Saturn} alt="planet-image-saturn" width={492} />*/}
-                </div>
+            <Draggable nodeRef={nodeRef}>
+                <div ref={nodeRef} className={'planet mars'} />
             </Draggable>
-            {/*<img*/}
-            {/*    src={Jupiter}*/}
-            {/*    className={'planet jupiter'}*/}
-            {/*    alt="planet-image-jupiter"*/}
-            {/*    width={747}*/}
-            {/*/>*/}
-            {/*<img*/}
-            {/*    src={Mars}*/}
-            {/*    className={'planet mars'}*/}
-            {/*    alt="planet-image-mars"*/}
-            {/*    width={310}*/}
-            {/*/>*/}
             <div className={'text'}>
                 <p className={'title'}>SOW Story</p>
                 <p className={'description'}>
@@ -153,7 +127,7 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                         여성 창작자와 함께하고 싶은 분이라면 누구든 환영합니다!
                     </span>
                 </p>
-                <ul className={'list'}>
+                <ul className={'checkList'}>
                     <li>
                         <Icon
                             name={'icon-check-pink'}
