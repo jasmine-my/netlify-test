@@ -4,7 +4,6 @@ import HorizontalScroll from 'react-scroll-horizontal';
 
 import { landingSectionStyle } from '~/components/landing/cindy';
 import { mediaQueryTypes } from '~/types';
-import { useHorizontalScroll } from '~/useHooks/useHorizontalScroll';
 
 export default function Collection({
     isPC,

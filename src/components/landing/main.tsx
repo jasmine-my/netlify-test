@@ -32,7 +32,7 @@ export default function Main({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                 : isTablet
                 ? '0 auto 88px auto'
                 : '0 0 10px 0'};
-            animation: bottom-to-top 1.5s 1s cubic-bezier(0.5, 0, 0.1, 1) both;
+            animation: bottom-to-top 1.5s 0.5s cubic-bezier(0.5, 0, 0.1, 1) both;
             @keyframes bottom-to-top {
                 from {
                     opacity: 0;
@@ -49,7 +49,7 @@ export default function Main({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             position: relative;
 
             .mission {
-                animation: bottom-to-top 1.5s 1.2s cubic-bezier(0.5, 0, 0.1, 1)
+                animation: bottom-to-top 1.5s 0.5s cubic-bezier(0.5, 0, 0.1, 1)
                     both;
                 ${isPC
                     ? font('Inter', 700, 50, 70, 'var(--BASIC-WHITE)')
@@ -58,7 +58,7 @@ export default function Main({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                     : font('Inter', 700, 30, 36.31, 'var(--BASIC-WHITE)')}
             }
             .description {
-                animation: bottom-to-top 1.5s 1.5s cubic-bezier(0.5, 0, 0.1, 1)
+                animation: bottom-to-top 1.5s 0.5s cubic-bezier(0.5, 0, 0.1, 1)
                     both;
                 margin: 0 auto;
                 margin-top: ${isPC ? '36px' : isTablet ? '32px' : '20px'};

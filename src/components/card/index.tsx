@@ -8,7 +8,8 @@ interface ICardProps {
 }
 
 const Card = styled.div<ICardProps>`
-    height: ${(props) => (props.isMobile ? '401px' : '579px')};
+    // height: ${(props) => (props.isMobile ? '401px' : '579px')};
+    height: 100%;
     width: 100%;
     padding: ${(props) => (props.isMobile ? '56.05px 29.43px' : '80px 42px')};
     overflow: hidden;

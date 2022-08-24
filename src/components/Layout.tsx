@@ -18,6 +18,7 @@ export default function Layout(props: { children: React.ReactNode }) {
             css={css`
                 position: relative;
                 min-width: ${isPC ? '1440px' : 0};
+                overflow: hidden;
             `}
         >
             <div>
