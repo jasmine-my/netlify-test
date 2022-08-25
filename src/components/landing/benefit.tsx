@@ -61,7 +61,7 @@ export default function Benefit({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                     </Card>
                     <Card isMobile={isMobile}>
                         <div>
-                            <p className={'cardTitle'}>FUN</p>
+                            <p className={'cardTitle'}>Fun</p>
                             <div className={'checkItems'}>
                                 <CheckItem color={'navy'}>
                                     내 작품으로 Space 넓혀가기

@@ -26,7 +26,7 @@ export default function Footer() {
                         alt="logo-footer"
                     />
                     <ul className={'copyright'}>
-                        <li>space_of_woman@gmail.com</li>
+                        <li>spaceofwomen@gmail.com</li>
                         <li>Copyright © SpaceOfWoman</li>
                     </ul>
                 </div>

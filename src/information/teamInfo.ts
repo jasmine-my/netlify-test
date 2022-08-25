@@ -3,14 +3,14 @@ import { IMemberCardProps } from '~/components/card/memberCard';
 export const team: Array<IMemberCardProps> = [
     {
         index: 1,
-        name: '이시은',
-        jd: 'Marketer / Podcast Host / Magazine Editor',
+        name: 'Mae',
+        jd: 'Web 3.0 Community Manager',
         experience: 'Yonsei University Sociology',
     },
     {
         index: 2,
         name: 'Ine',
-        jd: 'Marketer / Podcast Host / Magazine Editor',
+        jd: 'Marketer / Podcast Host',
         experience: 'Yonsei University Sociology',
     },
     {

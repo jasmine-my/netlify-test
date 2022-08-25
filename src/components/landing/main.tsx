@@ -8,6 +8,7 @@ export default function Main({ isPC, isTablet, isMobile }: mediaQueryTypes) {
     const landingMainStyle = css`
         background: url(${require('~/images/bg-planet.svg').default}) top center
             no-repeat;
+        background-size: cover;
         background-attachment: fixed;
         padding-top: ${isMobile ? mobileHeaderHeight : headerHeight};
         text-align: center;
