@@ -1,6 +1,5 @@
 import { css } from '@emotion/react';
-import React, { useRef } from 'react';
-import Draggable from 'react-draggable';
+import React from 'react';
 import Marquee from 'react-fast-marquee';
 
 import { landingSectionStyle } from '~/components/landing/cindy';
@@ -11,7 +10,7 @@ export default function Collection({
     isTablet,
     isMobile,
 }: mediaQueryTypes) {
-    const imageList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const imageList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
     const landingCollectionStyle = css`
         ${landingSectionStyle(isMobile, isTablet)};
         .wrap {
@@ -38,9 +37,9 @@ export default function Collection({
             .collection {
                 width: 100%;
                 height: ${isMobile ? '274.07px' : '440px'};
-                background: var(--OPACITY-WHITE);
                 border-radius: ${isMobile ? '12.46px' : '20px'};
                 margin-right: 40px;
+                overflow: hidden;
             }
         }
         position: relative;
@@ -68,7 +67,15 @@ export default function Collection({
                 <ul className={'collections'}>
                     <Marquee pauseOnHover={true} gradient={false} speed={40}>
                         {imageList.map((value) => (
-                            <div className={'collection'} key={value} />
+                            <div
+                                className={'collection'}
+                                key={value}
+                                css={css`
+                                    background: url('assets/images/collections/collection-${value}.jpg')
+                                        center center no-repeat;
+                                    background-size: cover;
+                                `}
+                            />
                         ))}
                     </Marquee>
                 </ul>

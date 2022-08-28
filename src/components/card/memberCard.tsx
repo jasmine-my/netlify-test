@@ -50,7 +50,7 @@ export default function MemberCard({
                         : isTablet
                         ? '435px'
                         : '300px'};
-                    background-image: url('assets/images/profile-${index}.png');
+                    background-image: url('assets/images/profiles/profile-${index}.png');
                     background-position: center center;
                     background-size: cover;
                     background-repeat: no-repeat;
