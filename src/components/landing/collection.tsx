@@ -48,8 +48,8 @@ export default function Collection({
             position: absolute;
             z-index: 0;
             &.saturn {
-                top: -500px;
-                right: ${isPC ? '0' : isTablet ? '0' : '-700px'};
+                top: -80px;
+                right: ${isPC ? '-300px' : '-100000px'};
                 background: url(${require('~/images/planet/planet-mars.svg')
                         .default})
                     no-repeat center center;

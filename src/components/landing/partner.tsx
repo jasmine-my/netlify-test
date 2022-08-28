@@ -8,7 +8,7 @@ export default function Partner({ isPC, isTablet, isMobile }: mediaQueryTypes) {
     const landingPartnerStyle = css`
         ${landingSectionStyle(isMobile, isTablet)};
         background: var(--BASIC-NAVY);
-        padding: ${isPC ? 0 : '100px 0'};
+        padding: ${isMobile ? '100px 0' : '125px 0'};
         .partners {
             display: grid;
             grid-template-columns: ${isPC

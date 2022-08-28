@@ -9,13 +9,13 @@ import { mediaQueryTypes } from '~/types';
 
 export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
     const landingStoryStyle = css`
-        background: url(${require('~/images/bg-gradient.svg').default}) center
-            center no-repeat;
+        background: url(${require('~/images/bg-gradient.svg').default})
+            var(--SOW-BLUE) center center no-repeat;
         background-size: cover;
         display: flex;
         justify-content: ${isPC ? 'flex-end' : 'flex-start'};
         align-items: center;
-        padding: ${isPC ? '187px 20%' : isTablet ? '187px 81px' : '69px 47px'};
+        padding: ${isPC ? '200px 20%' : isTablet ? '150px 81px' : '69px 47px'};
         position: relative;
 
         .planet {

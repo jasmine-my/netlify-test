@@ -18,6 +18,7 @@ const Card = styled.div<ICardProps>`
     border: 2px solid var(--SOW-GREEN);
     position: relative;
     box-sizing: border-box;
+    backdrop-filter: blur(5px);
 
     .cardTitle {
         text-align: left;

@@ -9,7 +9,8 @@ export const landingSectionStyle = (
     isTablet: boolean
 ) => css`
     width: 100%;
-    min-height: 100vh;
+    //min-height: 80vh;
+    padding: ${isMobile ? '90px 0' : isTablet ? '150px 0' : '200px 0'};
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,9 +19,12 @@ export const landingSectionStyle = (
         width: ${isMobile ? '90%' : isTablet ? '60%' : '75%'};
     }
     .title {
-        ${font('Inter', 700, 65, 78.66, 'var(--BASIC-WHITE)')};
-        margin-bottom: ${isMobile ? '40px' : '100px'};
+        ${isMobile
+            ? font('Inter', 700, 48, 58.09, 'var(--BASIC-WHITE)')
+            : font('Inter', 700, 65, 78.66, 'var(--BASIC-WHITE)')};
+        margin-bottom: ${isMobile ? '40px' : '80px'};
         text-align: center;
+        position: relative;
     }
 `;
 

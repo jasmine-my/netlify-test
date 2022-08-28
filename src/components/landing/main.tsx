@@ -2,6 +2,8 @@ import { css } from '@emotion/react';
 import React from 'react';
 
 import { font, headerHeight, mobileHeaderHeight } from '~/global_styles/global';
+import LargeLogo from '~/images/logo-full-large.png';
+import SmallLogo from '~/images/logo-full-small.png';
 import { mediaQueryTypes } from '~/types';
 
 export default function Main({ isPC, isTablet, isMobile }: mediaQueryTypes) {
@@ -21,10 +23,8 @@ export default function Main({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             padding-bottom: ${isPC ? '3%' : '10%'};
         }
         .mainLogo {
-            background: url(${isMobile
-                    ? require('~/images/logo-full-small.svg').default
-                    : require('~/images/logo-full-large.svg').default})
-                center center no-repeat;
+            background: url(${isMobile ? SmallLogo : LargeLogo}) center center
+                no-repeat;
             background-size: contain;
             width: ${isMobile ? '70%' : '100%'};
             height: ${isPC ? '96px' : isTablet ? '74px' : '300px'};
