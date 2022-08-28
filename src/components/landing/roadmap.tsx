@@ -18,9 +18,25 @@ export default function RoadMap({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             width: 100%;
             height: 100%;
         }
+        position: relative;
+        .planet {
+            position: absolute;
+            z-index: 0;
+            &.moon {
+                top: ${isMobile ? '-400px' : '-490px'};
+                left: ${isPC ? '-1000px' : isTablet ? '-1100px' : '-1200px'};
+                background: url(${require('~/images/planet/planet-moon.svg')
+                        .default})
+                    no-repeat center center;
+                background-size: contain;
+                width: 1877px;
+                height: 1055px;
+            }
+        }
     `;
     return (
         <div css={landingRoadmapStyle}>
+            <div className={'planet moon'} />
             <div className={'wrap'}>
                 <p className={'title'}>RoadMap</p>
                 <div className={'cards'}>

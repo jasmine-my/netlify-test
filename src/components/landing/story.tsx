@@ -25,7 +25,7 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             z-index: 1;
             &.saturn {
                 left: ${isPC ? '8%' : isTablet ? '-40%' : '-100%'};
-                background: url(${require('~/images/planet-saturn.svg')
+                background: url(${require('~/images/planet/planet-saturn.svg')
                         .default})
                     no-repeat center center;
                 background-size: contain;
@@ -37,7 +37,7 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             &.jupiter {
                 right: ${isPC ? '0' : isTablet ? '-50%' : '100%'};
                 top: -50px;
-                background: url(${require('~/images/planet-jupiter.svg')
+                background: url(${require('~/images/planet/planet-jupiter.svg')
                         .default})
                     no-repeat center center;
                 background-size: contain;
@@ -48,7 +48,8 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             &.mars {
                 right: ${isMobile ? '100%' : '5%'};
                 bottom: ${isPC ? '10%' : isTablet ? '20%' : '0'};
-                background: url(${require('~/images/planet-mars.svg').default})
+                background: url(${require('~/images/planet/planet-mars.svg')
+                        .default})
                     no-repeat center center;
                 background-size: contain;
                 width: 300px;

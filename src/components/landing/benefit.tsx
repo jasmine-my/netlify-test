@@ -18,9 +18,25 @@ export default function Benefit({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             width: 100%;
             height: 100%;
         }
+        position: relative;
+        .planet {
+            position: absolute;
+            z-index: 0;
+            &.venus {
+                top: ${isPC ? '-400px' : '-200px'};
+                right: ${isPC ? '-800px' : isTablet ? '-1100px' : '-1200px'};
+                background: url(${require('~/images/planet/planet-venus.svg')
+                        .default})
+                    no-repeat center center;
+                background-size: contain;
+                width: 1877px;
+                height: 1055px;
+            }
+        }
     `;
     return (
         <div css={landingBenefitStyle}>
+            <div className={'planet venus'} />
             <div className={'wrap'}>
                 <p className={'title'}>Benefit</p>
                 <div className={'cards'}>
