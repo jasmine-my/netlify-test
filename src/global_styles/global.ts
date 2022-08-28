@@ -139,7 +139,7 @@ const globalStyles = css`
 export default globalStyles;
 
 export const font = (
-    fontFamily: 'Noto' | 'Inter' = 'Noto',
+    fontFamily: 'Noto' | 'Inter' | 'GoodTimes' = 'Noto',
     weight: number,
     size: number,
     lineHeight: number,
@@ -150,8 +150,11 @@ export const font = (
     font-size: ${size}px;
     line-height: ${lineHeight}px;
     font-family: ${fontFamily === 'Noto'
-        ? 'Noto Sans KR, sans-serif'
-        : 'Inter, sans-serif'};
+            ? 'Noto Sans KR'
+            : fontFamily === 'Inter'
+            ? 'Inter'
+            : 'GoodTimes'},
+        sans-serif;
 `;
 
 export const mediaQuery = {
