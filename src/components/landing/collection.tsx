@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
-import React, { useEffect, useRef } from 'react';
-import HorizontalScroll from 'react-scroll-horizontal';
+import React from 'react';
+import Marquee from 'react-fast-marquee';
 
 import { landingSectionStyle } from '~/components/landing/cindy';
 import { mediaQueryTypes } from '~/types';
@@ -22,8 +22,6 @@ export default function Collection({
             height: 100%;
         }
         .collections {
-            display: flex;
-            gap: 40px;
             width: calc(
                 (
                     ${isMobile ? '274.07px' : '440px'} * ${imageList.length} +
@@ -36,6 +34,7 @@ export default function Collection({
                 height: ${isMobile ? '274.07px' : '440px'};
                 background: var(--OPACITY-WHITE);
                 border-radius: ${isMobile ? '12.46px' : '20px'};
+                margin-right: 40px;
             }
         }
     `;
@@ -44,31 +43,13 @@ export default function Collection({
         <div css={landingCollectionStyle}>
             <div className={'wrap'}>
                 <p className={'title'}>Collection</p>
-                <div className={'carousel'}>
-                    <HorizontalScroll
-                        pageLock={true}
-                        reverseScroll={true}
-                        style={{
-                            width: '100%',
-                            height: '100%',
-                            display: 'flex',
-                            gap: '40px',
-                            overflowX: 'auto',
-                        }}
-                        css={css`
-                            ::-webkit-scrollbar {
-                                height: 0;
-                                width: 0;
-                            }
-                        `}
-                    >
-                        <ul className={'collections'}>
-                            {imageList.map((value) => (
-                                <div className={'collection'} key={value} />
-                            ))}
-                        </ul>
-                    </HorizontalScroll>
-                </div>
+                <ul className={'collections'}>
+                    <Marquee pauseOnHover={true} gradient={false} speed={40}>
+                        {imageList.map((value) => (
+                            <div className={'collection'} key={value} />
+                        ))}
+                    </Marquee>
+                </ul>
             </div>
         </div>
     );
