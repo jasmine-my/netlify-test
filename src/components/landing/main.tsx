@@ -17,10 +17,9 @@ export default function Main({ isPC, isTablet, isMobile }: mediaQueryTypes) {
         height: 100vh;
         display: flex;
         justify-content: center;
-        align-items: flex-end;
+        align-items: center;
         .wrap {
             width: ${isPC ? '73%' : isTablet ? '90%' : '91%'};
-            padding-bottom: ${isPC ? '3%' : '10%'};
         }
         .mainLogo {
             background: url(${isMobile ? SmallLogo : LargeLogo}) center center
