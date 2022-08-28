@@ -73,7 +73,7 @@ export default function Cindy({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                     <div className={'bg'} />
                 </div>
                 <p className={'text'}>
-                    Web3 우주공간 입장을 위해
+                    Web3 우주공간 입장을 위해{' '}
                     <span className={'extraBold'}>3,500개</span>의 Cindy를
                     배포합니다! <br />
                     <br />

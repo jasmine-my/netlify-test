@@ -18,7 +18,7 @@ export const headerStyle = (
         : 'var(--OPACITY-WHITE)'};
     width: 100%;
     margin: 0 auto;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     transition: all 0.3s;
@@ -33,6 +33,7 @@ export const headerStyle = (
     }
     .logo {
         width: ${isMobile ? '104px' : '168px'};
+        cursor: pointer;
     }
     .contents {
         display: flex;

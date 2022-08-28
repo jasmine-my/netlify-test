@@ -33,7 +33,13 @@ export default function Header() {
     return (
         <div css={headerStyle(isOpenedMenu, isTable, isMobile)}>
             <div className={'wrap'}>
-                <img className={'logo'} src={HeaderLogo} alt="header-logo" />
+                <Link key={'main'} to={'main'} spy={true} smooth={true}>
+                    <img
+                        className={'logo'}
+                        src={HeaderLogo}
+                        alt="header-logo"
+                    />
+                </Link>
 
                 {isPC && (
                     <div className={'contents'}>
