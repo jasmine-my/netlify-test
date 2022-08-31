@@ -9,7 +9,7 @@ export const landingSectionStyle = (
     isTablet: boolean
 ) => css`
     width: 100%;
-    //min-height: 80vh;
+    min-height: 100vh;
     padding: ${isMobile ? '90px 0' : isTablet ? '150px 0' : '200px 0'};
     display: flex;
     justify-content: center;

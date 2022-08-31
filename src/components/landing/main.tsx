@@ -52,10 +52,10 @@ export default function Main({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                 animation: bottom-to-top 1.5s 1s cubic-bezier(0.5, 0, 0.1, 1)
                     both;
                 ${isPC
-                    ? font('Inter', 700, 50, 70, 'var(--BASIC-WHITE)')
+                    ? font('Inter', 700, 45, 70, 'var(--BASIC-WHITE)')
                     : isTablet
-                    ? font('Inter', 700, 40, 55, 'var(--BASIC-WHITE)')
-                    : font('Inter', 700, 30, 36.31, 'var(--BASIC-WHITE)')}
+                    ? font('Inter', 700, 35, 55, 'var(--BASIC-WHITE)')
+                    : font('Inter', 700, 25, 36.31, 'var(--BASIC-WHITE)')}
             }
             .description {
                 animation: bottom-to-top 1.5s 1s cubic-bezier(0.5, 0, 0.1, 1)
@@ -78,8 +78,7 @@ export default function Main({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                 <div className={'mainLogo'} />
                 <div className={'text'}>
                     <p className={'mission'}>
-                        Creative space {isMobile && <br />} empowering <br />{' '}
-                        all the female creators{' '}
+                        Creative space empowering <br /> all the female creators{' '}
                     </p>
                     <p className={'description'}>
                         Art와 Technology의 교차점에 있는 NFT 시장에서 여성

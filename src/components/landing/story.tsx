@@ -122,11 +122,6 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                     확장되고 운영되는 공간이에요.
                     <br /> 여러분이 만들어 갈 우주의 모습을 기대하며, 몇 가지
                     규칙을 알려드리겠습니다.
-                    <br /> 이 공간을 만드는 여정에 함께해주시겠어요?
-                    <br />{' '}
-                    <span className={'bold'}>
-                        여성 창작자와 함께하고 싶은 분이라면 누구든 환영합니다!
-                    </span>
                 </p>
                 <ul className={'checkList'}>
                     <li>
@@ -155,8 +150,11 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                     </li>
                 </ul>
                 <p className={'description'}>
-                    이 공간을 만드는 여정에 함께해주시겠어요? <br />
-                    여성 창작자와 함께하고 싶은 분이라면 누구든 환영합니다!
+                    <span className={'bold'}>
+                        이 공간을 만드는 여정에 함께해주시겠어요?
+                        <br /> 여성 창작자와 함께하고 싶은 분이라면 누구든
+                        환영합니다!
+                    </span>
                 </p>
             </div>
         </div>

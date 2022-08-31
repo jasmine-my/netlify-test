@@ -11,22 +11,28 @@ export default function Team({ isPC, isTablet, isMobile }: mediaQueryTypes) {
     const landingTeamStyle = css`
         margin: ${isMobile ? '100px 0' : '200px 0'};
         ${landingSectionStyle(isMobile, isTablet)};
-        .teamCards {
-            display: grid;
-            grid-template-columns: ${isPC
-                ? 'repeat(3, 1fr)'
-                : 'repeat(1, 1fr)'};
-            justify-content: center;
-            align-items: center;
-            gap: ${isPC ? '80px 40px ' : isTablet ? '80px' : '56px'};
+        .wrap {
             width: 100%;
         }
+        .teamCards {
+            display: grid;
+            grid-template-columns: ${isMobile
+                ? 'repeat(1, 1fr)'
+                : 'repeat(3, 1fr)'};
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            gap: ${isMobile ? '56px' : '60px 16px '};
+            width: ${isMobile ? '100%' : '701px'};
+            height: ${isMobile ? 'auto' : '880px'};
+            margin: 0 auto;
+        }
         .description {
-            margin-top: ${isPC ? '80px' : isTablet ? '99px' : '52px'};
+            margin-top: ${isMobile ? '52px' : '60px'};
             ${isMobile
-                ? font('Noto', 600, 16, 30, 'var(--BASIC-WHITE)')
-                : font('Noto', 600, 28, 50, 'var(--BASIC-WHITE)')};
-            text-align: ${isPC ? 'center' : 'start'};
+                ? font('Noto', 600, 16, 28, 'var(--BASIC-WHITE)')
+                : font('Noto', 600, 18, 36, 'var(--BASIC-WHITE)')};
+            text-align: center;
         }
     `;
     return (

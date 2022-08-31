@@ -16,18 +16,18 @@ const CheckItem = ({ color, children }: ICheckItemProps) => {
         <div
             css={css`
                 ${isMobile
-                    ? font('Noto', 600, 14.01, 28.03, 'var(--BASIC-GREY-1)')
-                    : font('Noto', 600, 20, 40, 'var(--BASIC-GREY-1)')};
-                margin-bottom: ${isMobile ? '6.93px' : '10px'};
+                    ? font('Noto', 600, 14, 27.71, 'var(--BASIC-GREY-1)')
+                    : font('Noto', 600, 18, 30, 'var(--BASIC-GREY-1)')};
+                margin-bottom: ${isMobile ? '6.93px' : '20px'};
                 display: grid;
-                grid-template-columns: 24px auto;
+                grid-template-columns: 21px auto;
                 align-items: center;
                 gap: ${isMobile ? '8.31px' : '12px'};
                 text-align: start;
-                overflow: auto;
+                overflow: hidden;
             `}
         >
-            <Icon name={`icon-check-${color}`} size={isMobile ? 16.82 : 24} />
+            <Icon name={`icon-check-${color}`} size={isMobile ? 16.82 : 21} />
             {children}
         </div>
     );

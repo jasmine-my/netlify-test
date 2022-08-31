@@ -17,20 +17,17 @@ export default function MemberCard({
     jd,
     experience,
 }: IMemberCardProps) {
-    const isTablet = useMediaQuery({ query: mediaQuery.TABLET });
     const isMobile = useMediaQuery({ query: mediaQuery.MOBILE });
 
     return (
         <div
             css={css`
-                width: 100%;
+                width: 223px;
                 height: 100%;
                 border-radius: 20px;
                 overflow: hidden;
                 display: grid;
-                grid-template-columns: repeat(
-                    ${isMobile ? '326px' : isTablet ? '435px' : '300px'} auto
-                );
+                grid-template-columns: repeat(223px auto);
                 background-color: var(--BASIC-NAVY);
 
                 :hover {
@@ -44,12 +41,8 @@ export default function MemberCard({
                     }
                 }
                 .profileImage {
-                    width: 100%;
-                    height: ${isMobile
-                        ? '326px'
-                        : isTablet
-                        ? '435px'
-                        : '300px'};
+                    width: 223px;
+                    height: 223px;
                     background-image: url('assets/images/profiles/profile-${index}.png');
                     background-position: center center;
                     background-size: cover;
@@ -59,28 +52,26 @@ export default function MemberCard({
                 }
                 .contents {
                     width: 100%;
-                    height: 100%;
+                    height: 187px;
                     text-align: center;
-                    padding: ${isMobile ? '36px 16px' : '52px 47.5px'};
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0 26.5px;
                     .memberName {
                         ${font(
                             'Inter',
                             700,
-                            isMobile ? 24 : 30,
-                            isMobile ? 29.05 : 36.31,
+                            isMobile ? 24 : 18,
+                            isMobile ? 29.05 : 21.78,
                             'var(--BASIC-WHITE)'
                         )};
                         margin-bottom: ${isMobile ? '16px' : '24px'};
                     }
 
                     .memberJd {
-                        ${font(
-                            'Inter',
-                            700,
-                            isMobile ? 14 : 18,
-                            isMobile ? 16.94 : 21.78,
-                            'var(--BASIC-WHITE)'
-                        )};
+                        ${font('Inter', 700, 14, 17, 'var(--BASIC-WHITE)')};
                         margin-bottom: 4px;
                     }
 
@@ -88,11 +79,10 @@ export default function MemberCard({
                         ${font(
                             'Inter',
                             400,
-                            isMobile ? 14 : 18,
-                            isMobile ? 16.94 : 21.78,
+                            isMobile ? 14 : 12,
+                            isMobile ? 16.94 : 14.52,
                             'var(--BASIC-WHITE)'
                         )};
-                        height: ${isMobile ? '34px' : '48px'};
                     }
                 }
             `}
