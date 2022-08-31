@@ -54,13 +54,8 @@ export const headerStyle = (
                     : 'var(--BASIC-NAVY)'
             }`
         )};
-        .active {
-            cursor: pointer;
-            color: var(--SOW-GREEN);
-            transition: color 0.2s ease-in-out;
-        }
         li {
-            :hover {
+            :is(:hover, :active) {
                 cursor: pointer;
                 color: var(--SOW-GREEN);
                 transition: color 0.2s ease-in-out;

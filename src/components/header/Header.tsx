@@ -5,7 +5,7 @@ import { Link } from 'react-scroll';
 
 import { headerStyle, snsIconStyle } from '~/components/header/style';
 import Icon from '~/components/icon/Icon';
-import { mediaQuery } from '~/global_styles/global';
+import { mediaQuery, mobileHeaderHeight } from '~/global_styles/global';
 import HeaderLogo from '~/images/logo-header.svg';
 import { urlInfo } from '~/information/urlInfo';
 import useGetScrollPosition from '~/useHooks/useGetScrollPosition';
@@ -85,16 +85,33 @@ export default function Header() {
             </div>
             {(isTable || isMobile) && isOpenedMenu && (
                 <ul className={'gnbItems small'}>
-                    {menus.map((menu) => (
-                        <Link
-                            key={menu.id}
-                            to={menu.id}
-                            spy={true}
-                            smooth={true}
-                        >
-                            <li>{menu.title}</li>
-                        </Link>
-                    ))}
+                    {menus.map((menu) => {
+                        if (menu.id === 'team') {
+                            return (
+                                <Link
+                                    key={menu.id}
+                                    to={menu.id}
+                                    offset={-300}
+                                    spy={true}
+                                    smooth={true}
+                                >
+                                    <li>{menu.title}</li>
+                                </Link>
+                            );
+                        } else {
+                            return (
+                                <Link
+                                    key={menu.id}
+                                    to={menu.id}
+                                    offset={isMobile ? -150 : 0}
+                                    spy={true}
+                                    smooth={true}
+                                >
+                                    <li>{menu.title}</li>
+                                </Link>
+                            );
+                        }
+                    })}
                 </ul>
             )}
         </div>

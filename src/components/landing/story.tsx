@@ -77,13 +77,19 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             }
 
             .checkList {
-                margin: ${isMobile ? '36px 0' : '48px 0'};
-                ${font('Noto', 600, 20, 38, 'var(--BASIC-WHITE)')};
+                margin: ${isMobile ? '24px 0' : '48px 0'};
+                ${isMobile
+                    ? font('Noto', 600, 16, 38, 'var(--BASIC-WHITE)')
+                    : font('Noto', 600, 20, 38, 'var(--BASIC-WHITE)')};
                 li {
-                    display: flex;
+                    display: grid;
+                    grid-template-columns: repeat(
+                        2,
+                        ${isMobile ? '14px' : '21px'} auto
+                    );
                     justify-content: start;
                     align-items: center;
-                    gap: ${isMobile ? '8px' : '12px'};
+                    gap: ${isMobile ? '5px' : '13.5px'};
                 }
             }
         }
@@ -127,7 +133,7 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                     <li>
                         <Icon
                             name={'icon-check-pink'}
-                            size={24}
+                            size={isMobile ? 14 : 21}
                             className={'checkIcon'}
                         />{' '}
                         각 행성에는 미션이 존재한다.
@@ -135,7 +141,7 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                     <li>
                         <Icon
                             name={'icon-check-pink'}
-                            size={24}
+                            size={isMobile ? 14 : 21}
                             className={'checkIcon'}
                         />{' '}
                         누구나 창작을 통해 미션에 참여할 수 있다.
@@ -143,7 +149,7 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                     <li>
                         <Icon
                             name={'icon-check-pink'}
-                            size={24}
+                            size={isMobile ? 14 : 21}
                             className={'checkIcon'}
                         />{' '}
                         미션 수행 결과는 공간에 실제로 반영된다.

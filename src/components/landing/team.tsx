@@ -9,8 +9,8 @@ import { mediaQueryTypes } from '~/types';
 
 export default function Team({ isPC, isTablet, isMobile }: mediaQueryTypes) {
     const landingTeamStyle = css`
-        margin: ${isMobile ? '100px 0' : '200px 0'};
         ${landingSectionStyle(isMobile, isTablet)};
+        margin: ${isMobile ? '100px 0' : '200px 0'};
         .wrap {
             width: 100%;
         }

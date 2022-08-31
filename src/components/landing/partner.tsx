@@ -7,6 +7,7 @@ import { mediaQueryTypes } from '~/types';
 export default function Partner({ isPC, isTablet, isMobile }: mediaQueryTypes) {
     const landingPartnerStyle = css`
         ${landingSectionStyle(isMobile, isTablet)};
+        min-height: auto;
         background: var(--BASIC-NAVY);
         padding: ${isMobile ? '100px 0' : '125px 0'};
         .partners {
