@@ -26,6 +26,20 @@ export default function Team({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             width: ${isMobile ? '100%' : '701px'};
             height: ${isMobile ? 'auto' : '880px'};
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            ::before {
+                position: absolute;
+                z-index: -1;
+                content: '';
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: ${isPC ? '1058px' : 0};
+                height: ${isPC ? '1058px' : 0};
+                background: rgba(255, 255, 255, 0.3);
+                filter: blur(200px);
+            }
         }
         .description {
             margin-top: ${isMobile ? '52px' : '60px'};
@@ -33,6 +47,8 @@ export default function Team({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                 ? font('Noto', 600, 16, 28, 'var(--BASIC-WHITE)')
                 : font('Noto', 600, 18, 36, 'var(--BASIC-WHITE)')};
             text-align: center;
+            z-index: 1;
+            position: relative;
         }
     `;
     return (
