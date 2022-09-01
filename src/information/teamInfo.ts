@@ -3,9 +3,9 @@ import { IMemberCardProps } from '~/components/card/memberCard';
 export const team: Array<IMemberCardProps> = [
     {
         index: 1,
-        name: 'Mae',
+        name: 'May',
         jd: 'Web 3.0 Community Manager',
-        experience: 'Yonsei University Sociology',
+        experience: 'Yonsei University',
     },
     {
         index: 2,
@@ -17,13 +17,14 @@ export const team: Array<IMemberCardProps> = [
         index: 3,
         name: 'Jade',
         jd: 'Graphic Designer',
-        experience: 'Hongik University Art Studies',
+        experience:
+            'Hongik University Art Studies / Visual Communication Design',
     },
     {
         index: 4,
         name: 'Venstein',
-        jd: 'Blockchain Engineer',
-        experience: 'Computer Science major (12-year)',
+        jd: 'Senior Blockchain Engineer',
+        experience: 'Computer Science major',
     },
     {
         index: 5,
