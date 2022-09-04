@@ -16,9 +16,13 @@ export default function Header() {
     const isMobile = useMediaQuery({ query: mediaQuery.MOBILE });
 
     const [isOpenedMenu, setIsOpenedMenu] = useState(false);
+    const [lastScrollPosition, setLastScrollPosition] = useState(0);
+    const [recentScrollPosition, setRecentScrollPosition] = useState(0);
     const { scrollPosition } = useGetScrollPosition();
     useEffect(() => {
         if (scrollPosition > 0) setIsOpenedMenu(false);
+        setLastScrollPosition(recentScrollPosition);
+        setRecentScrollPosition(scrollPosition);
     }, [scrollPosition]);
 
     const menus = [
@@ -29,10 +33,15 @@ export default function Header() {
         { id: 'team', title: 'Team' },
         { id: 'partner', title: 'Partner' },
     ];
-
     return (
         <div css={headerStyle(isOpenedMenu, isTable, isMobile)}>
-            <div className={'wrap'}>
+            <div
+                className={`wrap ${scrollPosition === 0 ? 'top' : ''} ${
+                    recentScrollPosition > lastScrollPosition
+                        ? 'scrollDown'
+                        : 'scrollUp'
+                }`}
+            >
                 <Link key={'main'} to={'main'} spy={true} smooth={true}>
                     <img
                         className={'logo'}
@@ -50,7 +59,6 @@ export default function Header() {
                                     to={menu.id}
                                     spy={true}
                                     smooth={true}
-                                    offset={menu.id === 'roadmap' ? -60 : 0}
                                 >
                                     <li>{menu.title}</li>
                                 </Link>
@@ -86,31 +94,16 @@ export default function Header() {
             {(isTable || isMobile) && isOpenedMenu && (
                 <ul className={'gnbItems small'}>
                     {menus.map((menu) => {
-                        if (menu.id === 'team') {
-                            return (
-                                <Link
-                                    key={menu.id}
-                                    to={menu.id}
-                                    offset={-300}
-                                    spy={true}
-                                    smooth={true}
-                                >
-                                    <li>{menu.title}</li>
-                                </Link>
-                            );
-                        } else {
-                            return (
-                                <Link
-                                    key={menu.id}
-                                    to={menu.id}
-                                    offset={isMobile ? -150 : 0}
-                                    spy={true}
-                                    smooth={true}
-                                >
-                                    <li>{menu.title}</li>
-                                </Link>
-                            );
-                        }
+                        return (
+                            <Link
+                                key={menu.id}
+                                to={menu.id}
+                                spy={true}
+                                smooth={true}
+                            >
+                                <li>{menu.title}</li>
+                            </Link>
+                        );
                     })}
                 </ul>
             )}

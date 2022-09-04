@@ -158,8 +158,8 @@ export const font = (
 `;
 
 export const mediaQuery = {
-    PC: '(min-width:1064px)',
-    TABLET: '(min-width:768px) and (max-width:1063px)',
+    PC: '(min-width:1283px)',
+    TABLET: '(min-width:768px) and (max-width:1282px)',
     MOBILE: '(max-width:767px)',
 };
 

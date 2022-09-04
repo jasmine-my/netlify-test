@@ -18,6 +18,7 @@ export const landingSectionStyle = (
     text-align: center;
     .wrap {
         width: ${isMobile ? '95%' : isTablet ? '60%' : '75%'};
+        min-width: ${!isMobile && !isTablet ? '1282px' : 'auto'};
     }
     .title {
         ${isMobile

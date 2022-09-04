@@ -13,7 +13,6 @@ export const headerStyle = (
     position: fixed;
     top: 0;
     left: 0;
-    transform: translateY(-100%);
     transition: all 0.3s;
     .scrollDown {
         animation: scrollDown 0.5s cubic-bezier(0.5, 0, 0.1, 1) both;
@@ -24,19 +23,20 @@ export const headerStyle = (
     @keyframes scrollDown {
         from {
             opacity: 1;
-            transform: translateY(100%);
         }
         to {
             opacity: 0;
+            transform: translateY(-100%);
         }
     }
     @keyframes scrollUp {
         from {
             opacity: 0;
+            transform: translateY(-100%);
         }
         to {
             opacity: 1;
-            transform: translateY(100%);
+            transform: translateY(0);
         }
     }
 

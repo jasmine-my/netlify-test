@@ -14,7 +14,8 @@ export default function RoadMap({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             grid-template-columns: repeat(${isPC ? '3' : '1'}, 1fr);
             grid-template-rows: repeat(${isPC ? '1' : '3'}, 1fr);
             gap: 18px;
-            width: 100%;
+            min-width: ${isPC ? '1000px' : '100%'};
+            margin: 0 auto;
             height: 100%;
             position: relative;
             z-index: 1;

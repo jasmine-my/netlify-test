@@ -41,13 +41,14 @@ export default function Team({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             }
         }
         .description {
-            margin-top: ${isMobile ? '52px' : '60px'};
+            margin: ${isMobile ? '52px auto 0 auto' : '60px auto 0 auto'};
             ${isMobile
                 ? font('Noto', 600, 16, 28, 'var(--BASIC-WHITE)')
                 : font('Noto', 600, 18, 36, 'var(--BASIC-WHITE)')};
             text-align: center;
             z-index: 1;
             position: relative;
+            width: ${isMobile ? '95%' : isTablet ? '60%' : '75%'};
         }
     `;
     return (
