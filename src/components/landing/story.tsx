@@ -4,18 +4,16 @@ import Draggable, { DraggableData } from 'react-draggable';
 
 import CheckItem from '~/components/checkItem';
 import Icon from '~/components/icon/Icon';
+import { landingSectionStyle } from '~/components/landing/cindy';
 import { font } from '~/global_styles/global';
 import { mediaQueryTypes } from '~/types';
 
 export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
     const landingStoryStyle = css`
+        ${landingSectionStyle(isMobile, isTablet)};
         background: url(${require('~/images/bg-gradient.svg').default})
             var(--SOW-BLUE) center center no-repeat;
         background-size: cover;
-        display: flex;
-        justify-content: ${isPC ? 'flex-end' : 'flex-start'};
-        align-items: center;
-        padding: ${isPC ? '200px 20%' : isTablet ? '150px 81px' : '69px 47px'};
         position: relative;
 
         .planet {
@@ -60,14 +58,10 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
         .text {
             text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
             z-index: 2;
-
-            .title {
-                ${isMobile
-                    ? font('Inter', 700, 48, 58.09, 'var(--BASIC-WHITE)')
-                    : font('Inter', 700, 65, 78.66, 'var(--BASIC-WHITE)')};
-                margin-bottom: ${isMobile ? '36px' : '80px'};
-                text-align: ${isMobile ? 'center' : 'left'};
-            }
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-items: center;
 
             .description {
                 ${font('Noto', 400, 16, 36, 'var(--BASIC-WHITE)')}
@@ -108,7 +102,7 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             <Draggable nodeRef={nodeRef}>
                 <div ref={nodeRef} className={'planet mars'} />
             </Draggable>
-            <div className={'text'}>
+            <div className={'text wrap'}>
                 <p className={'title'}>SOW Story</p>
                 <p className={'description'}>
                     안녕하세요, SOW 연구소입니다. <br />

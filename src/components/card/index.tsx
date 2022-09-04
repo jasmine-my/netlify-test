@@ -11,7 +11,7 @@ const Card = styled.div<ICardProps>`
     // height: ${(props) => (props.isMobile ? '401px' : '579px')};
     height: 100%;
     width: 100%;
-    padding: ${(props) => (props.isMobile ? '56.05px 29.43px' : '80px 42px')};
+    padding: ${(props) => (props.isMobile ? '56px 30px' : '60px 30px')};
     overflow: hidden;
     background: var(--OPACITY-WHITE);
     border-radius: ${(props) => (props.isMobile ? '14px' : '20px')};
@@ -25,8 +25,8 @@ const Card = styled.div<ICardProps>`
         margin-bottom: ${(props) => (props.isMobile ? '37.41px' : '54px')};
         ${(props) =>
             props.isMobile
-                ? font('Inter', 700, 28.03, 33.92, 'var(--BASIC-GREY-1)')
-                : font('Inter', 700, 40, 48.41, 'var(--BASIC-GREY-1)')}
+                ? font('Inter', 700, 28, 33.89, 'var(--BASIC-GREY-1)')
+                : font('Inter', 700, 32, 38.73, 'var(--BASIC-GREY-1)')}
     }
 
     :hover {

@@ -158,12 +158,10 @@ export const font = (
 `;
 
 export const mediaQuery = {
-    PC: '(min-width:1024px)',
-    TABLET: '(min-width:768px) and (max-width:1023px)',
+    PC: '(min-width:1064px)',
+    TABLET: '(min-width:768px) and (max-width:1063px)',
     MOBILE: '(max-width:767px)',
 };
 
-export const pcMinWidth = '1400px';
-
-export const mobileHeaderHeight = '71px';
-export const headerHeight = '120px';
+export const mobileHeaderHeight = '58px';
+export const headerHeight = '90px';

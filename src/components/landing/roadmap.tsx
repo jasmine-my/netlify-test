@@ -8,7 +8,6 @@ import { mediaQueryTypes } from '~/types';
 
 export default function RoadMap({ isPC, isTablet, isMobile }: mediaQueryTypes) {
     const landingRoadmapStyle = css`
-        margin: ${isMobile ? '100px 0' : '200px 0'};
         ${landingSectionStyle(isMobile, isTablet)};
         .cards {
             display: grid;
@@ -17,6 +16,8 @@ export default function RoadMap({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             gap: 18px;
             width: 100%;
             height: 100%;
+            position: relative;
+            z-index: 1;
         }
         position: relative;
         .planet {

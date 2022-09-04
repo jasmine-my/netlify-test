@@ -8,20 +8,21 @@ export const landingSectionStyle = (
     isMobile: boolean,
     isTablet: boolean
 ) => css`
+    box-sizing: border-box;
     width: 100%;
     min-height: 100vh;
-    // padding: ${isMobile ? '90px 0' : isTablet ? '150px 0' : '200px 0'};
+    padding: 60px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     .wrap {
-        width: ${isMobile ? '90%' : isTablet ? '60%' : '75%'};
+        width: ${isMobile ? '95%' : isTablet ? '60%' : '75%'};
     }
     .title {
         ${isMobile
-            ? font('Inter', 700, 48, 58.09, 'var(--BASIC-WHITE)')
-            : font('Inter', 700, 65, 78.66, 'var(--BASIC-WHITE)')};
+            ? font('GoodTimes', 700, 32, 38.4, 'var(--BASIC-WHITE)')
+            : font('GoodTimes', 700, 54, 64.8, 'var(--BASIC-WHITE)')};
         margin-bottom: ${isMobile ? '40px' : '80px'};
         text-align: center;
         position: relative;
@@ -45,25 +46,16 @@ export default function Cindy({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             ${font(
                 'Noto',
                 400,
-                isMobile ? 16 : 28,
-                isMobile ? 21.79 : 36,
+                isMobile ? 16 : 20,
+                isMobile ? 27 : 23,
                 'var(--BASIC-WHITE)'
             )}
             .bold {
                 ${font(
                     'Noto',
-                    700,
-                    isMobile ? 16 : 28,
-                    isMobile ? 21.79 : 36,
-                    'var(--BASIC-WHITE)'
-                )}
-            }
-            .extraBold {
-                ${font(
-                    'Noto',
                     900,
-                    isMobile ? 16 : 28,
-                    isMobile ? 21.79 : 36,
+                    isMobile ? 16 : 20,
+                    isMobile ? 27 : 23,
                     'var(--BASIC-WHITE)'
                 )}
             }
@@ -77,15 +69,14 @@ export default function Cindy({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                     <div className={'bg'} />
                 </div>
                 <p className={'text'}>
-                    Web3 우주공간 입장을 위해{' '}
-                    <span className={'extraBold'}>3,500개</span>의 Cindy를
-                    배포합니다! <br />
+                    Web3 우주공간 입장을 위해 3,500개의 Cindy를 배포합니다!{' '}
                     <br />
+                    {!isMobile && <br />}
                     아바타 <span className={'bold'}>Cindy</span>는 우주 공간{' '}
                     <span className={'bold'}>SPACE OF WOMEN</span> 개발을 위해
                     고안되었습니다
                     <br />
-                    <br />{' '}
+                    {!isMobile && <br />}
                     <span className={'extraBold'}>
                         자신만의 Cindy로 주어진 행성별 미션을 수행해 주세요
                     </span>

@@ -27,7 +27,7 @@ export default function Footer() {
                     />
                     <ul className={'copyright'}>
                         <li>spaceofwomen@gmail.com</li>
-                        <li>Copyright © SpaceOfWoman</li>
+                        <li>Copyright © SpaceOfWomen</li>
                     </ul>
                 </div>
                 <ul css={snsIconStyle} className={'snsIcons'}>

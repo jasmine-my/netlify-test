@@ -1,11 +1,6 @@
 import { css } from '@emotion/react';
 
-import {
-    font,
-    headerHeight,
-    mobileHeaderHeight,
-    pcMinWidth,
-} from '~/global_styles/global';
+import { font, headerHeight, mobileHeaderHeight } from '~/global_styles/global';
 
 export const headerStyle = (
     isOpenedMenu: boolean,
@@ -13,23 +8,47 @@ export const headerStyle = (
     isMobile: boolean
 ) => css`
     z-index: 3;
-    background-color: ${isOpenedMenu
-        ? 'var(--BASIC-WHITE)'
-        : 'var(--OPACITY-WHITE)'};
     width: 100%;
     margin: 0 auto;
     position: fixed;
     top: 0;
     left: 0;
+    transform: translateY(-100%);
     transition: all 0.3s;
+    .scrollDown {
+        animation: scrollDown 0.5s cubic-bezier(0.5, 0, 0.1, 1) both;
+    }
+    .scrollUp {
+        animation: scrollUp 0.5s cubic-bezier(0.5, 0, 0.1, 1) both;
+    }
+    @keyframes scrollDown {
+        from {
+            opacity: 1;
+            transform: translateY(100%);
+        }
+        to {
+            opacity: 0;
+        }
+    }
+    @keyframes scrollUp {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+            transform: translateY(100%);
+        }
+    }
+
     .wrap {
+        background-color: var(--BASIC-WHITE);
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: ${isTablet || isMobile ? 'auto' : pcMinWidth};
+        width: auto;
         margin: 0 auto;
-        height: ${isMobile ? mobileHeaderHeight : headerHeight};
-        padding: ${isTablet || isMobile ? '0 16px' : '0'};
+        min-height: ${isMobile ? mobileHeaderHeight : headerHeight};
+        padding: ${isTablet || isMobile ? '0 16px' : '0 20px'};
     }
     .logo {
         width: ${isMobile ? '104px' : '168px'};

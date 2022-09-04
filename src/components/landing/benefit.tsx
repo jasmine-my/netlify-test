@@ -8,7 +8,6 @@ import { mediaQueryTypes } from '~/types';
 
 export default function Benefit({ isPC, isTablet, isMobile }: mediaQueryTypes) {
     const landingBenefitStyle = css`
-        margin: ${isMobile ? '100px 0' : '200px 0'};
         ${landingSectionStyle(isMobile, isTablet)};
         .cards {
             display: grid;
