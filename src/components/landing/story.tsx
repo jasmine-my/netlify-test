@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Draggable, { DraggableData } from 'react-draggable';
 
 import CheckItem from '~/components/checkItem';
@@ -21,6 +21,7 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             cursor: pointer;
             border-radius: 50%;
             z-index: 1;
+            display: inline-block;
             &.saturn {
                 left: ${isPC ? '8%' : isTablet ? '-40%' : '-100%'};
                 background: url(${require('~/images/planet/planet-saturn.svg')
@@ -55,15 +56,18 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             }
         }
 
+        .title {
+            z-index: 2;
+        }
         .text {
             text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
-            z-index: 2;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-items: center;
 
             .description {
+                z-index: 2;
                 ${font('Noto', 400, 16, 36, 'var(--BASIC-WHITE)')}
                 .bold {
                     ${font('Noto', 700, 16, 36, 'var(--BASIC-WHITE)')}
@@ -71,6 +75,7 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             }
 
             .checkList {
+                z-index: 2;
                 margin: ${isMobile ? '24px 0' : '48px 0'};
                 ${isMobile
                     ? font('Noto', 600, 16, 38, 'var(--BASIC-WHITE)')
@@ -90,10 +95,15 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
     `;
 
     const nodeRef = useRef(null);
+    useEffect(() => {}, []);
+
+    const scrollEvent = (e: React.UIEvent<HTMLDivElement>) => {
+        console.log(e.currentTarget.scrollTop);
+    };
 
     return (
         <div css={landingStoryStyle}>
-            <Draggable nodeRef={nodeRef}>
+            <Draggable nodeRef={nodeRef} defaultClassName={'planets'}>
                 <div ref={nodeRef} className={'planet saturn'} />
             </Draggable>
             <Draggable nodeRef={nodeRef}>
@@ -102,7 +112,7 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             <Draggable nodeRef={nodeRef}>
                 <div ref={nodeRef} className={'planet mars'} />
             </Draggable>
-            <div className={'text wrap'}>
+            <div className={'text wrap'} onScroll={(e) => scrollEvent(e)}>
                 <p className={'title'}>SOW Story</p>
                 <p className={'description'}>
                     안녕하세요, SOW 연구소입니다. <br />
