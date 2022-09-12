@@ -3,7 +3,7 @@ import { IMemberCardProps } from '~/components/card/memberCard';
 export const team: Array<IMemberCardProps> = [
     {
         index: 1,
-        name: 'May',
+        name: 'Mae',
         jd: 'Web 3.0 Community Manager',
         experience: 'Yonsei University',
     },
@@ -22,7 +22,7 @@ export const team: Array<IMemberCardProps> = [
     },
     {
         index: 4,
-        name: 'Venstein',
+        name: 'Ven',
         jd: 'Senior Blockchain Engineer',
         experience: 'Computer Science major',
     },
