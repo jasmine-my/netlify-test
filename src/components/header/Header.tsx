@@ -5,7 +5,7 @@ import { Link } from 'react-scroll';
 
 import { headerStyle, snsIconStyle } from '~/components/header/style';
 import Icon from '~/components/icon/Icon';
-import { mediaQuery, mobileHeaderHeight } from '~/global_styles/global';
+import { mediaQuery } from '~/global_styles/global';
 import HeaderLogo from '~/images/logo-header.svg';
 import { urlInfo } from '~/information/urlInfo';
 import useGetScrollPosition from '~/useHooks/useGetScrollPosition';
@@ -86,7 +86,7 @@ export default function Header() {
                         name={
                             isOpenedMenu ? 'hamburger-close' : 'hamburger-open'
                         }
-                        size={isTable ? 72 : 36}
+                        size={isTable ? 45 : 30}
                         onClick={() => setIsOpenedMenu(!isOpenedMenu)}
                     />
                 )}
