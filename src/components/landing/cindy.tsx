@@ -1,36 +1,15 @@
 import { css } from '@emotion/react';
-import React from 'react';
+import React, { MutableRefObject, useRef } from 'react';
 
+import landingSectionStyle from '~/components/landing/landingsectionStyle';
 import { font } from '~/global_styles/global';
 import { mediaQueryTypes } from '~/types';
-
-export const landingSectionStyle = (
-    isMobile: boolean,
-    isTablet: boolean
-) => css`
-    box-sizing: border-box;
-    width: 100%;
-    min-height: 100vh;
-    padding: 60px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    .wrap {
-        width: ${isMobile ? '95%' : isTablet ? '60%' : '75%'};
-        min-width: ${!isMobile && !isTablet ? '1282px' : 'auto'};
-    }
-    .title {
-        ${isMobile
-            ? font('GoodTimes', 700, 32, 38.4, 'var(--BASIC-WHITE)')
-            : font('GoodTimes', 700, 54, 64.8, 'var(--BASIC-WHITE)')};
-        margin-bottom: ${isMobile ? '40px' : '80px'};
-        text-align: center;
-        position: relative;
-    }
-`;
+import { useOffsetTop } from '~/useHooks/useScroll';
 
 export default function Cindy({ isPC, isTablet, isMobile }: mediaQueryTypes) {
+    const ref = useRef() as MutableRefObject<HTMLDivElement | null>;
+    const { isShow } = useOffsetTop(ref.current?.offsetTop);
+
     const landingCindyStyle = css`
         ${landingSectionStyle(isMobile, isTablet)};
         .cindy {
@@ -63,8 +42,8 @@ export default function Cindy({ isPC, isTablet, isMobile }: mediaQueryTypes) {
         }
     `;
     return (
-        <div css={landingCindyStyle}>
-            <div className={'wrap'}>
+        <div css={landingCindyStyle} ref={ref}>
+            <div className={`text wrap ${isShow ? 'opacity' : ''}`}>
                 <p className={'title'}>Who is Cindy</p>
                 <div className={'cindy'}>
                     <div className={'bg'} />

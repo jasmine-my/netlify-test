@@ -1,8 +1,9 @@
 import { css } from '@emotion/react';
-import React from 'react';
+import React, { MutableRefObject, useRef } from 'react';
 
-import { landingSectionStyle } from '~/components/landing/cindy';
+import landingSectionStyle from '~/components/landing/landingsectionStyle';
 import { mediaQueryTypes } from '~/types';
+import { useOffsetTop } from '~/useHooks/useScroll';
 
 export default function Partner({ isPC, isTablet, isMobile }: mediaQueryTypes) {
     const landingPartnerStyle = css`
@@ -24,16 +25,19 @@ export default function Partner({ isPC, isTablet, isMobile }: mediaQueryTypes) {
         }
     `;
 
+    const ref = useRef() as MutableRefObject<HTMLDivElement | null>;
+    const { isShow } = useOffsetTop(ref.current?.offsetTop);
+
     return (
-        <div css={landingPartnerStyle}>
-            <div className={'wrap'}>
+        <div css={landingPartnerStyle} ref={ref}>
+            <div className={`wrap ${isShow ? 'opacity' : ''}`}>
                 <p className={'title'}>Partner</p>
                 <div className={'partners'}>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div />
+                    <div />
+                    <div />
+                    <div />
+                    <div />
                 </div>
             </div>
         </div>

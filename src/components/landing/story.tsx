@@ -1,12 +1,19 @@
 import { css } from '@emotion/react';
-import React, { useEffect, useRef, useState } from 'react';
+import React, {
+    MutableRefObject,
+    useEffect,
+    useMemo,
+    useRef,
+    useState,
+} from 'react';
 import Draggable, { DraggableData } from 'react-draggable';
 
 import CheckItem from '~/components/checkItem';
 import Icon from '~/components/icon/Icon';
-import { landingSectionStyle } from '~/components/landing/cindy';
+import landingSectionStyle from '~/components/landing/landingsectionStyle';
 import { font } from '~/global_styles/global';
 import { mediaQueryTypes } from '~/types';
+import useScroll, { useOffsetTop } from '~/useHooks/useScroll';
 
 export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
     const landingStoryStyle = css`
@@ -55,10 +62,6 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                 height: 300px;
             }
         }
-
-        .title {
-            z-index: 2;
-        }
         .text {
             text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
             display: flex;
@@ -67,7 +70,6 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             justify-items: center;
 
             .description {
-                z-index: 2;
                 ${font('Noto', 400, 16, 36, 'var(--BASIC-WHITE)')}
                 .bold {
                     ${font('Noto', 700, 16, 36, 'var(--BASIC-WHITE)')}
@@ -92,27 +94,21 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                 }
             }
         }
+        .wrap {
+            width: 700px;
+            min-width: 700px;
+        }
     `;
 
     const nodeRef = useRef(null);
     useEffect(() => {}, []);
 
-    const scrollEvent = (e: React.UIEvent<HTMLDivElement>) => {
-        console.log(e.currentTarget.scrollTop);
-    };
+    const ref = useRef() as MutableRefObject<HTMLDivElement | null>;
+    const { isShow } = useOffsetTop(ref.current?.offsetTop);
 
     return (
-        <div css={landingStoryStyle}>
-            <Draggable nodeRef={nodeRef} defaultClassName={'planets'}>
-                <div ref={nodeRef} className={'planet saturn'} />
-            </Draggable>
-            <Draggable nodeRef={nodeRef}>
-                <div ref={nodeRef} className={'planet jupiter'} />
-            </Draggable>
-            <Draggable nodeRef={nodeRef}>
-                <div ref={nodeRef} className={'planet mars'} />
-            </Draggable>
-            <div className={'text wrap'} onScroll={(e) => scrollEvent(e)}>
+        <div css={landingStoryStyle} ref={ref}>
+            <div className={`text wrap ${isShow ? 'opacity' : ''}`}>
                 <p className={'title'}>SOW Story</p>
                 <p className={'description'}>
                     안녕하세요, SOW 연구소입니다. <br />
@@ -167,6 +163,15 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                     </span>
                 </p>
             </div>
+            <Draggable nodeRef={nodeRef} defaultClassName={'planets'}>
+                <div ref={nodeRef} className={'planet saturn'} />
+            </Draggable>
+            <Draggable nodeRef={nodeRef}>
+                <div ref={nodeRef} className={'planet jupiter'} />
+            </Draggable>
+            <Draggable nodeRef={nodeRef}>
+                <div ref={nodeRef} className={'planet mars'} />
+            </Draggable>
         </div>
     );
 }

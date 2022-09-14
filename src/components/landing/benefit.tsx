@@ -1,10 +1,11 @@
 import { css } from '@emotion/react';
-import React from 'react';
+import React, { MutableRefObject, useRef } from 'react';
 
 import Card from '~/components/card';
 import CheckItem from '~/components/checkItem';
-import { landingSectionStyle } from '~/components/landing/cindy';
+import landingSectionStyle from '~/components/landing/landingsectionStyle';
 import { mediaQueryTypes } from '~/types';
+import { useOffsetTop } from '~/useHooks/useScroll';
 
 export default function Benefit({ isPC, isTablet, isMobile }: mediaQueryTypes) {
     const landingBenefitStyle = css`
@@ -33,10 +34,14 @@ export default function Benefit({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             }
         }
     `;
+
+    const ref = useRef() as MutableRefObject<HTMLDivElement | null>;
+    const { isShow } = useOffsetTop(ref.current?.offsetTop);
+
     return (
-        <div css={landingBenefitStyle}>
+        <div css={landingBenefitStyle} ref={ref}>
             <div className={'planet venus'} />
-            <div className={'wrap'}>
+            <div className={`wrap ${isShow ? 'opacity' : ''}`}>
                 <p className={'title'}>Benefit</p>
                 <div className={'cards'}>
                     <Card isMobile={isMobile}>

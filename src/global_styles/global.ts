@@ -163,5 +163,5 @@ export const mediaQuery = {
     MOBILE: '(max-width:767px)',
 };
 
-export const mobileHeaderHeight = '58px';
-export const headerHeight = '90px';
+export const mobileHeaderHeight = '40px';
+export const headerHeight = '60px';

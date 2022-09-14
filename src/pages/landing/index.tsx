@@ -23,7 +23,7 @@ export default function Landing() {
             <Element name={'main'}>
                 <Main isPC={isPC} isTablet={isTablet} isMobile={isMobile} />
             </Element>
-            <Element name={'story'}>
+            <Element name={'story'} id={'story'}>
                 <Story isPC={isPC} isMobile={isMobile} isTablet={isTablet} />
             </Element>
             <div

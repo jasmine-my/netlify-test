@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import React from 'react';
+import React, { MutableRefObject, RefObject, useEffect, useRef } from 'react';
 
 import { font, headerHeight, mobileHeaderHeight } from '~/global_styles/global';
 import LargeLogo from '~/images/logo-full-large.png';
@@ -71,8 +71,12 @@ export default function Main({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             ${font('Noto', 700, isPC ? 16 : 14, 28, 'var(--BASIC-WHITE)')}
         }
     `;
+
+    const ref = useRef() as MutableRefObject<HTMLDivElement>;
+    useEffect(() => {}, [ref]);
+
     return (
-        <div css={landingMainStyle}>
+        <div css={landingMainStyle} ref={ref}>
             <div className={'wrap'}>
                 <div>
                     <div className={'mainLogo'} />

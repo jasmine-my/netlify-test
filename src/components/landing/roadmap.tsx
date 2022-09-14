@@ -1,10 +1,11 @@
 import { css } from '@emotion/react';
-import React from 'react';
+import React, { MutableRefObject, useRef } from 'react';
 
 import Card from '~/components/card';
 import CheckItem from '~/components/checkItem';
-import { landingSectionStyle } from '~/components/landing/cindy';
+import landingSectionStyle from '~/components/landing/landingsectionStyle';
 import { mediaQueryTypes } from '~/types';
+import { useOffsetTop } from '~/useHooks/useScroll';
 
 export default function RoadMap({ isPC, isTablet, isMobile }: mediaQueryTypes) {
     const landingRoadmapStyle = css`
@@ -18,7 +19,7 @@ export default function RoadMap({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             margin: 0 auto;
             height: 100%;
             position: relative;
-            z-index: 1;
+            z-index: 10;
         }
         position: relative;
         .planet {
@@ -36,10 +37,14 @@ export default function RoadMap({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             }
         }
     `;
+
+    const ref = useRef() as MutableRefObject<HTMLDivElement | null>;
+    const { isShow } = useOffsetTop(ref.current?.offsetTop);
+
     return (
-        <div css={landingRoadmapStyle}>
+        <div css={landingRoadmapStyle} ref={ref}>
             <div className={'planet moon'} />
-            <div className={'wrap'}>
+            <div className={`wrap ${isShow ? 'opacity' : ''}`}>
                 <p className={'title'}>RoadMap</p>
                 <div className={'cards'}>
                     <Card isMobile={isMobile}>

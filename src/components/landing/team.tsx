@@ -1,11 +1,12 @@
 import { css } from '@emotion/react';
-import React from 'react';
+import React, { MutableRefObject, useRef } from 'react';
 
 import MemberCard from '~/components/card/memberCard';
-import { landingSectionStyle } from '~/components/landing/cindy';
+import landingSectionStyle from '~/components/landing/landingsectionStyle';
 import { font } from '~/global_styles/global';
 import { team } from '~/information/teamInfo';
 import { mediaQueryTypes } from '~/types';
+import { useOffsetTop } from '~/useHooks/useScroll';
 
 export default function Team({ isPC, isTablet, isMobile }: mediaQueryTypes) {
     const landingTeamStyle = css`
@@ -51,9 +52,13 @@ export default function Team({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             width: ${isMobile ? '95%' : isTablet ? '60%' : '75%'};
         }
     `;
+
+    const ref = useRef() as MutableRefObject<HTMLDivElement | null>;
+    const { isShow } = useOffsetTop(ref.current?.offsetTop);
+
     return (
-        <div css={landingTeamStyle}>
-            <div className={'wrap'}>
+        <div css={landingTeamStyle} ref={ref}>
+            <div className={`wrap ${isShow ? 'opacity' : ''}`}>
                 <p className={'title'}>Team</p>
                 <div className={'teamCards'}>
                     {team.map((member) => (

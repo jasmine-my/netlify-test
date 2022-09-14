@@ -1,9 +1,10 @@
 import { css } from '@emotion/react';
-import React from 'react';
+import React, { MutableRefObject, useRef } from 'react';
 import Marquee from 'react-fast-marquee';
 
-import { landingSectionStyle } from '~/components/landing/cindy';
+import landingSectionStyle from '~/components/landing/landingsectionStyle';
 import { mediaQueryTypes } from '~/types';
+import { useOffsetTop } from '~/useHooks/useScroll';
 
 export default function Collection({
     isPC,
@@ -59,10 +60,13 @@ export default function Collection({
         }
     `;
 
+    const ref = useRef() as MutableRefObject<HTMLDivElement | null>;
+    const { isShow } = useOffsetTop(ref.current?.offsetTop);
+
     return (
-        <div css={landingCollectionStyle}>
+        <div css={landingCollectionStyle} ref={ref}>
             <div className={'planet saturn'} />
-            <div className={'wrap'}>
+            <div className={`wrap ${isShow ? 'opacity' : ''}`}>
                 <p className={'title'}>Collection</p>
                 <ul className={'collections'}>
                     <Marquee pauseOnHover={true} gradient={false} speed={40}>
