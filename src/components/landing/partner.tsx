@@ -13,8 +13,9 @@ export default function Partner({ isPC, isTablet, isMobile }: mediaQueryTypes) {
         padding: ${isMobile ? '100px 0' : '125px 0'};
         .partners {
             display: grid;
+            // TODO: 파트너 개수에 따라서 조정되도록
             grid-template-columns: ${isPC
-                ? 'repeat(5, 1fr)'
+                ? 'repeat(2, 1fr)'
                 : 'repeat(1, 1fr)'};
             justify-items: center;
             div {
@@ -33,9 +34,6 @@ export default function Partner({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             <div className={`wrap ${isShow ? 'opacity' : ''}`}>
                 <p className={'title'}>Partner</p>
                 <div className={'partners'}>
-                    <div />
-                    <div />
-                    <div />
                     <div />
                     <div />
                 </div>

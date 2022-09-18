@@ -54,11 +54,11 @@ export default function Cindy({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                     {!isMobile && <br />}
                     아바타 <span className={'bold'}>Cindy</span>는 우주 공간{' '}
                     <span className={'bold'}>SPACE OF WOMEN</span> 개발을 위해
-                    고안되었습니다
+                    고안되었습니다.
                     <br />
                     {!isMobile && <br />}
                     <span className={'extraBold'}>
-                        자신만의 Cindy로 주어진 행성별 미션을 수행해 주세요
+                        자신만의 Cindy로 주어진 행성별 미션을 수행해 주세요.
                     </span>
                 </p>
             </div>

@@ -30,16 +30,16 @@ export default function Collection({
         .collections {
             width: calc(
                 (
-                    ${isMobile ? '274.07px' : '440px'} * ${imageList.length} +
-                        ${isMobile ? '40px' : '24.92px'} *
+                    ${isMobile ? '250px' : '300px'} * ${imageList.length} +
+                        ${isMobile ? '30px' : '24.92px'} *
                         ${imageList.length + 1}
                 )
             );
             .collection {
                 width: 100%;
-                height: ${isMobile ? '274.07px' : '440px'};
+                height: ${isMobile ? '250px' : '300px'};
                 border-radius: ${isMobile ? '12.46px' : '20px'};
-                margin-right: 40px;
+                margin-right: 30px;
                 overflow: hidden;
             }
         }

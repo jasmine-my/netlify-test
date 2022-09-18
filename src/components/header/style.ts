@@ -51,7 +51,7 @@ export const headerStyle = (
         padding: ${isTablet || isMobile ? '0 16px' : '0 20px'};
     }
     .logo {
-        width: ${isMobile ? '50%' : '70%'};
+        width: ${isMobile ? '45%' : '60%'};
         cursor: pointer;
     }
     .contents {

@@ -1,6 +1,19 @@
 import { css } from '@emotion/react';
 
 const globalStyles = css`
+    html::-webkit-scrollbar {
+        height: 18px;
+        width: 10px;
+    }
+    html::-webkit-scrollbar-track {
+        background-color: var(--SOW-PURPLE);
+    }
+    html::-webkit-scrollbar-thumb {
+        background: var(--OPACITY-WHITE);
+        background-clip: padding-box;
+        border: 3px solid transparent;
+        border-radius: 10px;
+    }
     html,
     body,
     div,

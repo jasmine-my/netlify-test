@@ -1,15 +1,15 @@
 import { css } from '@emotion/react';
-import React, { MutableRefObject, RefObject, useEffect, useRef } from 'react';
+import React, { MutableRefObject, useEffect, useRef } from 'react';
 
 import { font, headerHeight, mobileHeaderHeight } from '~/global_styles/global';
+import background from '~/images/bg-planet.png';
 import LargeLogo from '~/images/logo-full-large.png';
 import SmallLogo from '~/images/logo-full-small.png';
 import { mediaQueryTypes } from '~/types';
 
 export default function Main({ isPC, isTablet, isMobile }: mediaQueryTypes) {
     const landingMainStyle = css`
-        background: url(${require('~/images/bg-planet.svg').default}) top center
-            no-repeat;
+        background: url(${background}) top center no-repeat;
         background-size: cover;
         background-attachment: fixed;
         padding-top: ${isMobile ? mobileHeaderHeight : headerHeight};

@@ -20,9 +20,9 @@ const CheckItem = ({ color, children }: ICheckItemProps) => {
                     : font('Noto', 600, 18, 30, 'var(--BASIC-GREY-1)')};
                 margin-bottom: ${isMobile ? '6.93px' : '20px'};
                 display: grid;
-                grid-template-columns: 21px auto;
+                grid-template-columns: ${isMobile ? '16.81px' : '21px'} auto;
                 align-items: center;
-                gap: ${isMobile ? '8.31px' : '12px'};
+                gap: ${isMobile ? '5px' : '12px'};
                 text-align: start;
                 overflow: hidden;
             `}

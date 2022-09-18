@@ -8,14 +8,12 @@ interface ICardProps {
 }
 
 const Card = styled.div<ICardProps>`
-    // height: ${(props) => (props.isMobile ? '401px' : '579px')};
     height: 100%;
     width: 100%;
-    padding: ${(props) => (props.isMobile ? '56px 30px' : '60px 30px')};
+    padding: ${(props) => (props.isMobile ? '56px 20px' : '60px 30px')};
     overflow: hidden;
     background: var(--OPACITY-WHITE);
     border-radius: ${(props) => (props.isMobile ? '14px' : '20px')};
-    border: 2px solid var(--SOW-GREEN);
     position: relative;
     box-sizing: border-box;
     backdrop-filter: blur(5px);
@@ -31,7 +29,6 @@ const Card = styled.div<ICardProps>`
 
     :hover {
         background: var(--BASIC-WHITE);
-        border-color: var(--SOW-PINK);
         transform: scale(0.98);
         box-shadow: 0 0 5px -2px rgba(0, 0, 0, 0.3);
         cursor: pointer;

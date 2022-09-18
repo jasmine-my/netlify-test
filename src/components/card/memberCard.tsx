@@ -22,7 +22,7 @@ export default function MemberCard({
     return (
         <div
             css={css`
-                width: 223px;
+                width: ${isMobile ? '100%' : '223px'};
                 height: 100%;
                 border-radius: 20px;
                 overflow: hidden;
@@ -41,8 +41,8 @@ export default function MemberCard({
                     }
                 }
                 .profileImage {
-                    width: 223px;
-                    height: 223px;
+                    width: ${isMobile ? '100%' : '223px'};
+                    height: ${isMobile ? '360px' : '223px'};
                     background-image: url('assets/images/profiles/profile-${index}.png');
                     background-position: center center;
                     background-size: cover;

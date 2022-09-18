@@ -1,28 +1,21 @@
 import { css } from '@emotion/react';
-import React, {
-    MutableRefObject,
-    useEffect,
-    useMemo,
-    useRef,
-    useState,
-} from 'react';
-import Draggable, { DraggableData } from 'react-draggable';
+import React, { MutableRefObject, useEffect, useRef } from 'react';
+import Draggable from 'react-draggable';
 
-import CheckItem from '~/components/checkItem';
 import Icon from '~/components/icon/Icon';
 import landingSectionStyle from '~/components/landing/landingsectionStyle';
 import { font } from '~/global_styles/global';
+import background from '~/images/bg-gradient.png';
 import { mediaQueryTypes } from '~/types';
-import useScroll, { useOffsetTop } from '~/useHooks/useScroll';
+import { useOffsetTop } from '~/useHooks/useScroll';
 
 export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
     const landingStoryStyle = css`
         ${landingSectionStyle(isMobile, isTablet)};
-        background: url(${require('~/images/bg-gradient.svg').default})
-            var(--SOW-BLUE) center center no-repeat;
+        background: url(${background}) var(--SOW-BLUE) center center no-repeat;
         background-size: cover;
+        transform: translateY(1px);
         position: relative;
-
         .planet {
             position: absolute;
             cursor: pointer;
@@ -72,10 +65,12 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             .description {
                 ${font('Noto', 400, 16, 36, 'var(--BASIC-WHITE)')}
                 .bold {
-                    ${font('Noto', 700, 16, 36, 'var(--BASIC-WHITE)')}
+                    ${font('Noto', 700, 16, 36, 'var(--BASIC-WHITE)')};
+                }
+                span {
+                    display: ${isMobile ? 'inline' : 'block'};
                 }
             }
-
             .checkList {
                 z-index: 2;
                 margin: ${isMobile ? '24px 0' : '48px 0'};
@@ -95,8 +90,8 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             }
         }
         .wrap {
-            width: 700px;
-            min-width: 700px;
+            width: ${isMobile ? '360px' : isTablet ? '60%' : '700px'};
+            min-width: ${!isMobile && !isTablet ? '700px' : 'auto'};
         }
     `;
 
@@ -111,23 +106,25 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             <div className={`text wrap ${isShow ? 'opacity' : ''}`}>
                 <p className={'title'}>SOW Story</p>
                 <p className={'description'}>
-                    안녕하세요, SOW 연구소입니다. <br />
+                    안녕하세요, SOW 연구소입니다.
+                    <br />
                     <span className={'bold'}>
                         Web3 세계에서 활동하는 여성 창작자가 매우 적다는
-                        연구결과가 있었습니다.
-                    </span>{' '}
-                    <br />
+                        연구결과가 있었습니다.{' '}
+                    </span>
                     잠재력 있는 여성 창작자들이 Web3에서 빛을 발하지 못하고 있던
-                    것이죠. <br />
+                    것이죠.
+                    <br />
                     <span className={'bold'}>
                         그래서 저희는 Web3 우주공간 ‘SPACE OF WOMEN’을
-                        마련했습니다!
+                        마련했습니다!{' '}
                     </span>
-                    <br />
                     이곳은 상상이 현실이 되는 곳입니다. 다양한 창작물이 모여
-                    확장되고 운영되는 공간이에요.
-                    <br /> 여러분이 만들어 갈 우주의 모습을 기대하며, 몇 가지
-                    규칙을 알려드리겠습니다.
+                    확장되고 운영되는 공간이에요.{' '}
+                    <span>
+                        여러분이 만들어 갈 우주의 모습을 기대하며, 몇 가지
+                        규칙을 알려드리겠습니다.
+                    </span>
                 </p>
                 <ul className={'checkList'}>
                     <li>

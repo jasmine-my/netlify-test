@@ -13,7 +13,7 @@ export default function RoadMap({ isPC, isTablet, isMobile }: mediaQueryTypes) {
         .cards {
             display: grid;
             grid-template-columns: repeat(${isPC ? '3' : '1'}, 1fr);
-            grid-template-rows: repeat(${isPC ? '1' : '3'}, 1fr);
+            grid-template-rows: repeat(${isPC ? '1' : '3'}, auto);
             gap: 18px;
             min-width: ${isPC ? '1000px' : '100%'};
             margin: 0 auto;

@@ -12,8 +12,9 @@ const landingSectionStyle = (isMobile: boolean, isTablet: boolean) => css`
     align-items: center;
     text-align: center;
     .wrap {
-        width: ${isMobile ? '95%' : isTablet ? '60%' : '75%'};
-        min-width: ${!isMobile && !isTablet ? '1282px' : 'auto'};
+        width: ${isMobile ? '360px' : isTablet ? '60%' : '75%'};
+        //min-width: ${!isMobile && !isTablet ? '1282px' : 'auto'};
+        min-width: ${isMobile ? '360px' : isTablet ? 'auto' : '1282px'};
         opacity: 0;
         &.opacity {
             animation: opacity 1s ease-in-out forwards;

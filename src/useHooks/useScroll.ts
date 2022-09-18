@@ -7,7 +7,7 @@ const useScroll = () => {
     });
 
     const onScroll = () => {
-        setState({ x: window.scrollX, y: scrollY });
+        setState({ x: window.scrollX, y: window.scrollY });
     };
     useEffect(() => {
         window.addEventListener('scroll', onScroll);
