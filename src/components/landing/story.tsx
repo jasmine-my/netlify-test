@@ -14,7 +14,6 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
         ${landingSectionStyle(isMobile, isTablet)};
         background: url(${background}) var(--SOW-BLUE) center center no-repeat;
         background-size: cover;
-        transform: translateY(1px);
         position: relative;
         .planet {
             position: absolute;
@@ -67,9 +66,6 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                 .bold {
                     ${font('Noto', 700, 16, 36, 'var(--BASIC-WHITE)')};
                 }
-                span {
-                    display: ${isMobile ? 'inline' : 'block'};
-                }
             }
             .checkList {
                 z-index: 2;
@@ -105,27 +101,32 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
         <div css={landingStoryStyle} ref={ref}>
             <div className={`text wrap ${isShow ? 'opacity' : ''}`}>
                 <p className={'title'}>SOW Story</p>
-                <p className={'description'}>
+                <div className={'description breakInMobileText'}>
                     안녕하세요, SOW 연구소입니다.
                     <br />
                     <span className={'bold'}>
                         Web3 세계에서 활동하는 여성 창작자가 매우 적다는
-                        연구결과가 있었습니다.{' '}
-                    </span>
+                        연구결과가 있었습니다.
+                    </span>{' '}
                     잠재력 있는 여성 창작자들이 Web3에서 빛을 발하지 못하고 있던
                     것이죠.
                     <br />
-                    <span className={'bold'}>
-                        그래서 저희는 Web3 우주공간 ‘SPACE OF WOMEN’을
-                        마련했습니다!{' '}
-                    </span>
-                    이곳은 상상이 현실이 되는 곳입니다. 다양한 창작물이 모여
-                    확장되고 운영되는 공간이에요.{' '}
-                    <span>
-                        여러분이 만들어 갈 우주의 모습을 기대하며, 몇 가지
-                        규칙을 알려드리겠습니다.
-                    </span>
-                </p>
+                    {(isTablet || isMobile) && <br />}
+                    <p className={'bold'}>
+                        그래서 저희는 Web3 우주공간{' '}
+                        <span>‘SPACE OF WOMEN’을 마련했습니다!</span>
+                    </p>
+                    <p>
+                        이곳은 상상이 현실이 되는 곳입니다.{' '}
+                        <span>
+                            다양한 창작물이 모여 확장되고 운영되는 공간이에요.
+                        </span>
+                    </p>
+                    <p>
+                        <span>여러분이 만들어 갈 우주의 모습을 기대하며, </span>
+                        <span>몇 가지 규칙을 알려드리겠습니다.</span>
+                    </p>
+                </div>
                 <ul className={'checkList'}>
                     <li>
                         <Icon
@@ -152,13 +153,13 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                         미션 수행 결과는 공간에 실제로 반영된다.
                     </li>
                 </ul>
-                <p className={'description'}>
-                    <span className={'bold'}>
+                <div className={'description breakInMobileText'}>
+                    <p className={'bold'}>
                         이 공간을 만드는 여정에 함께해주시겠어요?
-                        <br /> 여성 창작자와 함께하고 싶은 분이라면 누구든
-                        환영합니다!
-                    </span>
-                </p>
+                        <br /> 여성 창작자와 함께하고 싶은 분이라면{' '}
+                        <span>누구든 환영합니다!</span>
+                    </p>
+                </div>
             </div>
             <Draggable nodeRef={nodeRef} defaultClassName={'planets'}>
                 <div ref={nodeRef} className={'planet saturn'} />

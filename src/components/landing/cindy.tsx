@@ -48,19 +48,26 @@ export default function Cindy({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                 <div className={'cindy'}>
                     <div className={'bg'} />
                 </div>
-                <p className={'text'}>
-                    Web3 우주공간 입장을 위해 3,500개의 Cindy를 배포합니다!{' '}
+                <div className={'text breakInMobileText'}>
+                    <p>
+                        Web3 우주공간 입장을 위해{' '}
+                        <span>3,500개의 Cindy를 배포합니다!</span>
+                    </p>
                     <br />
-                    {!isMobile && <br />}
-                    아바타 <span className={'bold'}>Cindy</span>는 우주 공간{' '}
-                    <span className={'bold'}>SPACE OF WOMEN</span> 개발을 위해
-                    고안되었습니다.
+                    <p>
+                        아바타 <span className={'bold'}>Cindy</span>는 우주 공간{' '}
+                        <span className={'bold'}>SPACE OF WOMEN</span>{' '}
+                        {(isTablet || isMobile) && <br />}개발을 위해
+                        고안되었습니다.
+                    </p>
                     <br />
-                    {!isMobile && <br />}
-                    <span className={'extraBold'}>
-                        자신만의 Cindy로 주어진 행성별 미션을 수행해 주세요.
-                    </span>
-                </p>
+                    <p>
+                        <span className={'extraBold'}>
+                            자신만의 Cindy로 주어진{' '}
+                        </span>
+                        <span>행성별 미션을 수행해 주세요.</span>
+                    </p>
+                </div>
             </div>
         </div>
     );

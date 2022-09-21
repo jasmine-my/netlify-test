@@ -50,9 +50,6 @@ export default function Team({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             z-index: 1;
             position: relative;
             width: ${isMobile ? '95%' : isTablet ? '60%' : '75%'};
-            span {
-                display: ${isMobile ? 'inline' : 'block'};
-            }
         }
     `;
 
@@ -74,25 +71,29 @@ export default function Team({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                         />
                     ))}
                 </div>
-                <p className={'description'}>
-                    문화예술과 NFT에 관심이 많은 6명의 팀원이 함께합니다.
+                <div className={'description breakInMobileText'}>
+                    <p>
+                        <span>문화예술과 NFT에 관심이 많은 </span>
+                        <span>6명의 팀원이 함께합니다.</span>
+                    </p>
+                    <p>
+                        <span>각자 팟캐스트, 공연, 글, 디자인까지</span>
+                        <span>다양한 분야를 경험했어요.</span>
+                    </p>
                     <br />
-                    각자 팟캐스트, 공연, 글, 디자인까지 다양한 분야를
-                    경험했어요.
+                    <p>저희도 NFT가 낯설고 어렵게 느껴질 때가 있었어요.</p>
+                    <p>하지만 한 가지는 분명했습니다.</p>
                     <br />
+                    <p>저희는 불편하고 어려운 커뮤니티 대신, </p>
+                    <p>여성 창작자를 위한 포용적인 커뮤니티를 만들어 </p>
+                    <p>
+                        더 많은 여성들이 NFT 시장에서 빛을 발할 수 있도록{' '}
+                        <span>지원하려고 합니다.</span>
+                    </p>
                     <br />
-                    저희도 NFT가 낯설고 어렵게 느껴질 때가 있었어요.
-                    <br />
-                    하지만 한 가지는 분명했습니다. <br />
-                    <br />
-                    <span>저희는 불편하고 어려운 커뮤니티 대신,</span>
-                    <span>여성 창작자를 위한 포용적인 커뮤니티를 만들어</span>
-                    더 많은 여성들이 NFT 시장에서 빛을 발할 수 있도록 지원하려고
-                    합니다. <br />
-                    <br />
-                    <span>SOW Citizen으로 함께해주신다면,</span>더 큰 변화를
-                    만들 수 있을 것이라고 믿습니다!
-                </p>
+                    <p>SOW Citizen으로 함께해주신다면,</p>
+                    <p>더 큰 변화를 만들 수 있을 것이라고 믿습니다!</p>
+                </div>
             </div>
         </div>
     );

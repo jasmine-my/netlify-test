@@ -39,6 +39,11 @@ const landingSectionStyle = (isMobile: boolean, isTablet: boolean) => css`
         text-align: center;
         position: relative;
     }
+    .breakInMobileText {
+        span:not(.black, .bold) {
+            display: ${isTablet || isMobile ? 'block' : 'inline'};
+        }
+    }
 `;
 
 export default landingSectionStyle;

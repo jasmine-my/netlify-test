@@ -14,6 +14,10 @@ export const headerStyle = (
     top: 0;
     left: 0;
     transition: all 0.3s;
+    .top {
+        opacity: 1;
+        transform: translateY(0);
+    }
     .scrollDown {
         animation: scrollDown 0.5s cubic-bezier(0.5, 0, 0.1, 1) both;
     }

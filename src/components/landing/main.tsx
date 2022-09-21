@@ -25,13 +25,18 @@ export default function Main({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             flex-direction: column;
             justify-content: space-between;
             align-content: center;
+            .breakInMobileText {
+                span {
+                    display: ${isMobile ? 'block' : 'inline'};
+                }
+            }
         }
         .mainLogo {
-            background: url(${isMobile ? SmallLogo : LargeLogo}) center center
-                no-repeat;
+            background: url(${isMobile ? SmallLogo : LargeLogo})
+                ${isMobile ? 'left' : 'center'} no-repeat;
             background-size: contain;
             width: ${isMobile ? '70%' : '100%'};
-            height: ${isPC ? '96px' : isTablet ? '74px' : '300px'};
+            height: ${isPC ? '96px' : isTablet ? '74px' : '200px'};
             margin: ${isPC
                 ? '0 auto 41px auto'
                 : isTablet
@@ -51,6 +56,7 @@ export default function Main({ isPC, isTablet, isMobile }: mediaQueryTypes) {
         }
         .mission {
             animation: bottom-to-top 1.5s 1s cubic-bezier(0.5, 0, 0.1, 1) both;
+            text-align: ${isMobile ? 'start' : 'center'};
             ${isPC
                 ? font('Inter', 700, 40, 70, 'var(--BASIC-WHITE)')
                 : isTablet
@@ -80,16 +86,23 @@ export default function Main({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             <div className={'wrap'}>
                 <div>
                     <div className={'mainLogo'} />
-                    <p className={'mission'}>
-                        Creative space empowering all the female creators{' '}
+                    <p className={'mission breakInMobileText'}>
+                        Creative space empowering{' '}
+                        <span>all the female creators</span>
                     </p>
                 </div>
-                <p className={'description'}>
-                    Art와 Technology의 교차점에 있는 NFT 시장에서 여성 창작자의
-                    매출 비중은 5%에 불과합니다.
-                    {!isMobile && <br />} 포용적인 NFT 시장을 만들기 위해 여성
-                    창작자 간 네트워킹과 협업을 지원합니다.
-                </p>
+                <div className={'description breakInMobileText'}>
+                    <p>
+                        Art와 Technology의 교차점에 있는 NFT 시장에서{' '}
+                        <span>여성 창작자의 매출 비중은 5%에 불과합니다.</span>
+                    </p>
+                    <p>
+                        포용적인 NFT 시장을 만들기 위해{' '}
+                        <span>
+                            여성 창작자 간 네트워킹과 협업을 지원합니다.
+                        </span>
+                    </p>
+                </div>
             </div>
         </div>
     );
