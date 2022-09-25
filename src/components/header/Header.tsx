@@ -70,6 +70,7 @@ export default function Header() {
                                     <Icon
                                         size={32}
                                         name={`sns-${sns.name}`}
+                                        hover
                                         onClick={() => window.open(sns.url)}
                                     />
                                 </li>

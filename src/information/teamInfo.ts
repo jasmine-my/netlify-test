@@ -17,8 +17,7 @@ export const team: Array<IMemberCardProps> = [
         index: 3,
         name: 'Jade',
         jd: 'Graphic Designer',
-        experience:
-            'Hongik University Art Studies / Visual Communication Design',
+        experience: 'Hongik University Art Studies / HIVCD',
     },
     {
         index: 4,
@@ -37,5 +36,11 @@ export const team: Array<IMemberCardProps> = [
         name: 'Suri',
         jd: 'UXUI Designer',
         experience: 'SVA MFA Interaction Design',
+    },
+    {
+        index: 7,
+        name: 'Noah',
+        jd: 'Motion Designer',
+        experience: 'EWHA Design major',
     },
 ];

@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 export interface IconProps {
     name: string;
     size: number;
+    hover?: boolean;
 }
 
 const Icon = styled.span<IconProps>`
@@ -13,6 +14,11 @@ const Icon = styled.span<IconProps>`
     background-repeat: no-repeat;
     background-size: auto 100%;
     display: inline-block;
+    transition: all 0.2s ease-in-out;
+    :hover {
+        background-image: url('assets/icons/${(props) =>
+            props.hover ? props.name + '-hover' : props.name}.svg');
+    }
 `;
 
 export default Icon;

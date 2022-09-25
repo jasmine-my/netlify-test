@@ -12530,6 +12530,11 @@ react-is@^18.0.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.1.0.tgz#61aaed3096d30eacf2a2127118b5b41387d32a67"
   integrity sha512-Fl7FuabXsJnV5Q1qIOQwx/sagGF18kogb4gpfcG4gjLBWO0WDiiz1ko/ExayuxE7InyQkBLkxRFG5oxY6Uu3Kg==
 
+react-parallax-tilt@^1.7.67:
+  version "1.7.67"
+  resolved "https://registry.yarnpkg.com/react-parallax-tilt/-/react-parallax-tilt-1.7.67.tgz#79541fb3e4fade3eddf85c56ff87042b98f702c8"
+  integrity sha512-r4Tdqa3DltRMnsfJYscnmqU2wnIrq6DOS+1SCY/+wmIS5bYu+t+wqAHz94BHKRvQ8GCFmHONWgTM0ps9pYihsA==
+
 react-popper-tooltip@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/react-popper-tooltip/-/react-popper-tooltip-3.1.1.tgz#329569eb7b287008f04fcbddb6370452ad3f9eac"

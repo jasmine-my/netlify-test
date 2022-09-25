@@ -9,7 +9,7 @@ import { mediaQueryTypes } from '~/types';
 
 export default function Main({ isPC, isTablet, isMobile }: mediaQueryTypes) {
     const landingMainStyle = css`
-        background: url(${background}) top center no-repeat;
+        background: url(${background}) top center no-repeat var(--SOW-PURPLE);
         background-size: cover;
         background-attachment: fixed;
         padding-top: ${isMobile ? mobileHeaderHeight : headerHeight};

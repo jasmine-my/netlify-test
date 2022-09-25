@@ -21,7 +21,7 @@ export default function Partner({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             div {
                 border: 1px solid var(--BASIC-GREY-2);
                 height: ${isPC ? '168px' : '73.5px'};
-                width: ${isMobile ? '50%' : '100%'};
+                width: ${isMobile ? '100%' : '80%'};
             }
         }
     `;
@@ -34,8 +34,18 @@ export default function Partner({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             <div className={`wrap ${isShow ? 'opacity' : ''}`}>
                 <p className={'title'}>Partner</p>
                 <div className={'partners'}>
-                    <div />
-                    <div />
+                    <div
+                        css={css`
+                            background: url('assets/images/partners/partner-1.png')
+                                center center no-repeat;
+                        `}
+                    />
+                    <div
+                        css={css`
+                            background: url('assets/images/partners/partner-2.png')
+                                center center no-repeat;
+                        `}
+                    />
                 </div>
             </div>
         </div>

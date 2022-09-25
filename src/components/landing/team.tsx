@@ -18,13 +18,15 @@ export default function Team({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             display: grid;
             grid-template-columns: ${isMobile
                 ? 'repeat(1, 1fr)'
-                : 'repeat(3, 1fr)'};
+                : isTablet
+                ? 'repeat(2, 1fr)'
+                : 'repeat(4, 1fr)'};
             justify-content: center;
             justify-items: center;
             align-items: center;
-            gap: ${isMobile ? '56px' : '60px 16px '};
-            width: ${isMobile ? '100%' : '701px'};
-            height: ${isMobile ? 'auto' : '880px'};
+            gap: ${isMobile || isTablet ? '56px' : '60px 16px '};
+            width: ${isMobile ? '100%' : isTablet ? '60%' : '701px'};
+            height: ${isMobile || isTablet ? 'auto' : '880px'};
             margin: 0 auto;
             position: relative;
             z-index: 1;
@@ -74,7 +76,7 @@ export default function Team({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                 <div className={'description breakInMobileText'}>
                     <p>
                         <span>문화예술과 NFT에 관심이 많은 </span>
-                        <span>6명의 팀원이 함께합니다.</span>
+                        <span>팀원들이 함께합니다.</span>
                     </p>
                     <p>
                         <span>각자 팟캐스트, 공연, 글, 디자인까지</span>
