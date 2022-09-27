@@ -18,24 +18,14 @@ const MemberCardStyle = (isMobile: boolean, index: number) => css`
     border-radius: 20px;
     overflow: hidden;
     display: grid;
-    grid-template-columns: repeat(223px auto);
+    grid-template-columns: repeat(1, auto);
     background-color: var(--BASIC-NAVY);
 
-    //:hover {
-    //    transform: scale(0.98);
-    //    box-shadow: 0 0 5px -2px rgba(0, 0, 0, 0.3);
-    //    cursor: pointer;
-    //    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
-    //    .contents {
-    //        transform: translateY(-10px);
-    //        transition: all 900ms cubic-bezier(0.19, 1, 0.22, 1);
-    //    }
-    //}
     :hover {
         cursor: pointer;
     }
     .profileImage {
-        width: ${isMobile ? '100%' : '223px'};
+        width: ${isMobile ? '360px' : '223px'};
         height: ${isMobile ? '360px' : '223px'};
         background-image: url('assets/images/profiles/profile-${index}.jpg');
         background-position: center center;

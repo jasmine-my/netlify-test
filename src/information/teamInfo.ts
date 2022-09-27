@@ -37,10 +37,10 @@ export const team: Array<IMemberCardProps> = [
         jd: 'UXUI Designer',
         experience: 'SVA MFA Interaction Design',
     },
-    {
-        index: 7,
-        name: 'Noah',
-        jd: 'Motion Designer',
-        experience: 'EWHA Design major',
-    },
+    // {
+    //     index: 7,
+    //     name: 'Noah',
+    //     jd: 'Motion Designer',
+    //     experience: 'EWHA Design major',
+    // },
 ];

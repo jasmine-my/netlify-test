@@ -11,22 +11,18 @@ import { useOffsetTop } from '~/useHooks/useScroll';
 export default function Team({ isPC, isTablet, isMobile }: mediaQueryTypes) {
     const landingTeamStyle = css`
         ${landingSectionStyle(isMobile, isTablet)};
-        .wrap {
-            width: ${isMobile ? '360px' : '100%'};
-        }
         .teamCards {
             display: grid;
             grid-template-columns: ${isMobile
                 ? 'repeat(1, 1fr)'
                 : isTablet
                 ? 'repeat(2, 1fr)'
-                : 'repeat(4, 1fr)'};
+                : 'repeat(3, 1fr)'};
             justify-content: center;
-            justify-items: center;
+            justify-items: stretch;
             align-items: center;
             gap: ${isMobile || isTablet ? '56px' : '60px 16px '};
-            width: ${isMobile ? '100%' : isTablet ? '60%' : '701px'};
-            height: ${isMobile || isTablet ? 'auto' : '880px'};
+            width: 100%;
             margin: 0 auto;
             position: relative;
             z-index: 1;
