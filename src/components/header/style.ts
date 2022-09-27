@@ -14,15 +14,15 @@ export const headerStyle = (
     top: 0;
     left: 0;
     transition: all 0.3s;
-    .top {
-        opacity: 1;
-        transform: translateY(0);
-    }
     .scrollDown {
-        animation: scrollDown 0.5s cubic-bezier(0.5, 0, 0.1, 1) both;
+        animation: scrollDown 0.5s cubic-bezier(0.5, 0, 0.1, 1) forwards;
+        -webkit-animation: webkit-scrollDown 0.5s cubic-bezier(0.5, 0, 0.1, 1)
+            forwards;
     }
     .scrollUp {
-        animation: scrollUp 0.5s cubic-bezier(0.5, 0, 0.1, 1) both;
+        animation: scrollUp 0.5s cubic-bezier(0.5, 0, 0.1, 1) forwards;
+        -webkit-animation: webkit-scrollUp 0.5s cubic-bezier(0.5, 0, 0.1, 1)
+            forwards;
     }
     @keyframes scrollDown {
         from {
@@ -33,6 +33,15 @@ export const headerStyle = (
             transform: translateY(-100%);
         }
     }
+    @-webkit-keyframes webkit-scrollDown {
+        from {
+            -webkit-opacity: 1;
+        }
+        to {
+            -webkit-opacity: 0;
+            -webkit-transform: translateY(-100%);
+        }
+    }
     @keyframes scrollUp {
         from {
             opacity: 0;
@@ -41,6 +50,16 @@ export const headerStyle = (
         to {
             opacity: 1;
             transform: translateY(0);
+        }
+    }
+    @-webkit-keyframes webkit-scrollUp {
+        from {
+            -webkit-opacity: 0;
+            -webkit-transform: translateY(-100%);
+        }
+        to {
+            -webkit-opacity: 1;
+            -webkit-transform: translateY(0);
         }
     }
 
@@ -54,6 +73,12 @@ export const headerStyle = (
         min-height: ${isMobile ? mobileHeaderHeight : headerHeight};
         padding: ${isTablet || isMobile ? '0 16px' : '0 20px'};
     }
+
+    .top {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
     .logo {
         width: ${isMobile ? '45%' : '60%'};
         cursor: pointer;

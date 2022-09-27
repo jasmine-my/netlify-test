@@ -36,11 +36,11 @@ export default function Header() {
     return (
         <div css={headerStyle(isOpenedMenu, isTable, isMobile)}>
             <div
-                className={`wrap ${scrollPosition === 0 ? 'top' : ''} ${
+                className={`wrap ${
                     recentScrollPosition > lastScrollPosition
                         ? 'scrollDown'
                         : 'scrollUp'
-                }`}
+                } ${scrollPosition === 0 ? 'top' : ''}`}
             >
                 <Link key={'main'} to={'main'} spy={true} smooth={true}>
                     <img
