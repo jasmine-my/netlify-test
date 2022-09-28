@@ -21,7 +21,7 @@ export default function Team({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             justify-content: center;
             justify-items: stretch;
             align-items: center;
-            gap: ${isMobile || isTablet ? '56px' : '60px 16px '};
+            gap: ${isMobile || isTablet ? '56px' : '60px 300px '};
             width: 100%;
             margin: 0 auto;
             position: relative;

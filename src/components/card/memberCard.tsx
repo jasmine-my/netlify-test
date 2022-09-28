@@ -13,7 +13,7 @@ export interface IMemberCardProps {
 }
 
 const MemberCardStyle = (isMobile: boolean, index: number) => css`
-    width: ${isMobile ? '100%' : '223px'};
+    //width: ${isMobile ? '100%' : '223px'};
     height: 100%;
     border-radius: 20px;
     overflow: hidden;
@@ -25,7 +25,8 @@ const MemberCardStyle = (isMobile: boolean, index: number) => css`
         cursor: pointer;
     }
     .profileImage {
-        width: ${isMobile ? '360px' : '223px'};
+        width: 100%;
+        // width: ${isMobile ? '360px' : '223px'};
         height: ${isMobile ? '360px' : '223px'};
         background-image: url('assets/images/profiles/profile-${index}.jpg');
         background-position: center center;
