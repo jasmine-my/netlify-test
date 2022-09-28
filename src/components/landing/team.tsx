@@ -17,11 +17,11 @@ export default function Team({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                 ? 'repeat(1, 1fr)'
                 : isTablet
                 ? 'repeat(2, 1fr)'
-                : 'repeat(3, 1fr)'};
+                : 'repeat(4, 1fr)'};
             justify-content: center;
             justify-items: stretch;
             align-items: center;
-            gap: ${isMobile || isTablet ? '56px' : '60px 300px '};
+            gap: ${isMobile || isTablet ? '56px' : '60px 60px '};
             width: 100%;
             margin: 0 auto;
             position: relative;

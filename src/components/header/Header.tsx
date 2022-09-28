@@ -19,8 +19,10 @@ export default function Header() {
     const [lastScrollPosition, setLastScrollPosition] = useState(0);
     const [recentScrollPosition, setRecentScrollPosition] = useState(0);
     const { scrollPosition } = useGetScrollPosition();
+
     useEffect(() => {
         if (scrollPosition > 0) setIsOpenedMenu(false);
+
         setLastScrollPosition(recentScrollPosition);
         setRecentScrollPosition(scrollPosition);
     }, [scrollPosition]);
@@ -39,8 +41,10 @@ export default function Header() {
                 className={`wrap ${
                     recentScrollPosition > lastScrollPosition
                         ? 'scrollDown'
+                        : scrollPosition > 15
+                        ? 'top'
                         : 'scrollUp'
-                } ${scrollPosition > 15 ? 'top' : ''}`}
+                }`}
             >
                 <Link key={'main'} to={'main'} spy={true} smooth={true}>
                     <img
