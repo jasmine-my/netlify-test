@@ -40,7 +40,7 @@ export default function Header() {
                     recentScrollPosition > lastScrollPosition
                         ? 'scrollDown'
                         : 'scrollUp'
-                } ${scrollPosition === 0 ? 'top' : ''}`}
+                } ${scrollPosition > 15 ? 'top' : ''}`}
             >
                 <Link key={'main'} to={'main'} spy={true} smooth={true}>
                     <img
