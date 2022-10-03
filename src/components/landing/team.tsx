@@ -9,6 +9,8 @@ import { mediaQueryTypes } from '~/types';
 import { useOffsetTop } from '~/useHooks/useScroll';
 
 export default function Team({ isPC, isTablet, isMobile }: mediaQueryTypes) {
+    // 블러 필터(filter: blur)가 사파리에서 계산량을 많이 차지하는 것 같습니다. (저사양 맥에서 끊김현상 발생)
+    // 일단 ::before를 다 뺐습니다.
     const landingTeamStyle = css`
         ${landingSectionStyle(isMobile, isTablet)};
         .teamCards {
@@ -26,18 +28,18 @@ export default function Team({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             margin: 0 auto;
             position: relative;
             z-index: 1;
-            ::before {
-                position: absolute;
-                z-index: -1;
-                content: '';
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: ${isPC ? '1058px' : 0};
-                height: ${isPC ? '1058px' : 0};
-                background: rgba(255, 255, 255, 0.3);
-                filter: blur(200px);
-            }
+            // ::before {
+            //     position: absolute;
+            //     z-index: -1;
+            //     content: '';
+            //     top: 50%;
+            //     left: 50%;
+            //     transform: translate(-50%, -50%);
+            //     width: ${isPC ? '1058px' : 0};
+            //     height: ${isPC ? '1058px' : 0};
+            //     background: rgba(255, 255, 255, 0.3);
+            //     filter: blur(200px);
+            // }
         }
         .description {
             margin: ${isMobile ? '52px auto 0 auto' : '60px auto 0 auto'};
