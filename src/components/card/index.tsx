@@ -25,22 +25,6 @@ const CardStyle = (isMobile: boolean) => css`
     :hover {
         cursor: pointer;
     }
-
-    //:hover {
-    //    background: var(--BASIC-WHITE);
-    //    transform: scale(0.98);
-    //    box-shadow: 0 0 5px -2px rgba(0, 0, 0, 0.3);
-    //    cursor: pointer;
-    //    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
-    //    .cardTitle {
-    //        transform: translateY(5px);
-    //        transition: all 900ms cubic-bezier(0.19, 1, 0.22, 1);
-    //    }
-    //    .checkItems {
-    //        transform: translateY(-5px);
-    //        transition: all 900ms cubic-bezier(0.19, 1, 0.22, 1);
-    //    }
-    //}
 `;
 
 interface ICardProps {
@@ -50,7 +34,7 @@ interface ICardProps {
 
 export default function Card({ isMobile, children }: ICardProps) {
     return (
-        <Tilt>
+        <Tilt tiltMaxAngleX={10} tiltMaxAngleY={5} transitionSpeed={1000}>
             <div css={CardStyle(isMobile)}>{children}</div>
         </Tilt>
     );

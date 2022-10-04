@@ -36,6 +36,7 @@ export default function Footer() {
                             <Icon
                                 size={32}
                                 name={`sns-${sns.name}`}
+                                hoverEffect
                                 onClick={() => window.open(sns.url)}
                             />
                         </li>

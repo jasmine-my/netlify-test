@@ -35,10 +35,10 @@ export const headerStyle = (
     }
     @-webkit-keyframes webkit-scrollDown {
         from {
-            -webkit-opacity: 1;
+            -webkit-filter: opacity(1);
         }
         to {
-            -webkit-opacity: 0;
+            -webkit-filter: opacity(0);
             -webkit-transform: translateY(-100%);
         }
     }
@@ -54,11 +54,11 @@ export const headerStyle = (
     }
     @-webkit-keyframes webkit-scrollUp {
         from {
-            -webkit-opacity: 0;
+            -webkit-filter: opacity(0);
             -webkit-transform: translateY(-100%);
         }
         to {
-            -webkit-opacity: 1;
+            -webkit-filter: opacity(1);
             -webkit-transform: translateY(0);
         }
     }
@@ -80,7 +80,7 @@ export const headerStyle = (
     }
 
     .logo {
-        width: ${isMobile ? '45%' : '60%'};
+        width: ${isMobile ? '60%' : '60%'};
         cursor: pointer;
     }
     .contents {

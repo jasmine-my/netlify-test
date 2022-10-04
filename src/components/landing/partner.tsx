@@ -12,16 +12,13 @@ export default function Partner({ isPC, isTablet, isMobile }: mediaQueryTypes) {
         background: var(--BASIC-NAVY);
         padding: ${isMobile ? '100px 0' : '125px 0'};
         .partners {
-            display: grid;
-            // TODO: 파트너 개수에 따라서 조정되도록
-            grid-template-columns: ${isPC
-                ? 'repeat(2, 1fr)'
-                : 'repeat(1, 1fr)'};
-            justify-items: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: ${isMobile ? 'wrap' : 'no-wrap'};
             div {
-                border: 1px solid var(--BASIC-GREY-2);
-                height: ${isPC ? '168px' : '73.5px'};
-                width: ${isMobile ? '100%' : '80%'};
+                height: ${isPC ? '168px' : '94px'};
+                width: ${isMobile ? '100%' : '286px'};
             }
         }
     `;

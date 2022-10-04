@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export interface IconProps {
     name: string;
     size: number;
-    hover?: boolean;
+    hoverEffect?: boolean;
 }
 
 const Icon = styled.span<IconProps>`
@@ -17,7 +17,7 @@ const Icon = styled.span<IconProps>`
     transition: all 0.2s ease-in-out;
     :hover {
         background-image: url('assets/icons/${(props) =>
-            props.hover ? props.name + '-hover' : props.name}.svg');
+            props.hoverEffect ? props.name + '-hover' : props.name}.svg');
     }
 `;
 

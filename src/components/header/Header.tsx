@@ -17,7 +17,7 @@ let lastScrollPosition = 0;
 
 export default function Header() {
     const isPC = useMediaQuery({ query: mediaQuery.PC });
-    const isTable = useMediaQuery({ query: mediaQuery.TABLET });
+    const isTablet = useMediaQuery({ query: mediaQuery.TABLET });
     const isMobile = useMediaQuery({ query: mediaQuery.MOBILE });
 
     const [isOpenedMenu, setIsOpenedMenu] = useState(false);
@@ -52,7 +52,7 @@ export default function Header() {
         { id: 'partner', title: 'Partner' },
     ];
     return (
-        <div css={headerStyle(isOpenedMenu, isTable, isMobile)}>
+        <div css={headerStyle(isOpenedMenu, isTablet, isMobile)}>
             <div className={`wrap ${showHeader ? 'scrollUp' : 'scrollDown'}`}>
                 <Link key={'main'} to={'main'} spy={true} smooth={true}>
                     <img
@@ -82,7 +82,7 @@ export default function Header() {
                                     <Icon
                                         size={32}
                                         name={`sns-${sns.name}`}
-                                        hover
+                                        hoverEffect
                                         onClick={() => window.open(sns.url)}
                                     />
                                 </li>
@@ -91,7 +91,7 @@ export default function Header() {
                     </div>
                 )}
 
-                {(isTable || isMobile) && (
+                {(isTablet || isMobile) && (
                     <Icon
                         css={css`
                             cursor: pointer;
@@ -99,12 +99,12 @@ export default function Header() {
                         name={
                             isOpenedMenu ? 'hamburger-close' : 'hamburger-open'
                         }
-                        size={isTable ? 45 : 30}
+                        size={isTablet ? 45 : 40}
                         onClick={() => setIsOpenedMenu(!isOpenedMenu)}
                     />
                 )}
             </div>
-            {(isTable || isMobile) && isOpenedMenu && (
+            {(isTablet || isMobile) && isOpenedMenu && (
                 <ul className={'gnbItems small'}>
                     {menus.map((menu) => {
                         return (

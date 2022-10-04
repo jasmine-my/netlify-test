@@ -21,6 +21,7 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             border-radius: 50%;
             z-index: 1;
             display: inline-block;
+            transition: all 0.3s;
             &.saturn {
                 left: ${isPC ? '8%' : isTablet ? '-40%' : '-100%'};
                 background: url(${require('~/images/planet/planet-saturn.svg')
@@ -31,7 +32,6 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                 height: 500px;
                 border-radius: 0;
             }
-
             &.jupiter {
                 right: ${isPC ? '0' : isTablet ? '-50%' : '100%'};
                 top: -50px;
@@ -42,7 +42,6 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                 width: 740px;
                 height: 740px;
             }
-
             &.mars {
                 right: ${isMobile ? '100%' : '5%'};
                 bottom: ${isPC ? '10%' : isTablet ? '20%' : '0'};
@@ -53,9 +52,55 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                 width: 300px;
                 height: 300px;
             }
+            &.toRight {
+                animation: toRight 1.5s 0.3s cubic-bezier(0.5, 0, 0.1, 1)
+                    forwards;
+                -webkit-animation: webkit-toRight 1.5s
+                    cubic-bezier(0.5, 0, 0.1, 1) forwards;
+            }
+            &.toLeft {
+                animation: toLeft 1.5 0.3s cubic-bezier(0.5, 0, 0.1, 1) forwards;
+                -webkit-animation: webkit-toLeft 1.5s
+                    cubic-bezier(0.5, 0, 0.1, 1) forwards;
+            }
+
+            @keyframes toRight {
+                from {
+                    transform: translateX(-60%);
+                }
+                to {
+                    transform: translateX(0);
+                }
+            }
+            @keyframes webkit-toRight {
+                from {
+                    -webkit-transform: translateX(-60%);
+                }
+                to {
+                    -webkit-transform: translateX(0);
+                }
+            }
+            @keyframes toLeft {
+                from {
+                    opacity: 0;
+                    transform: translateX(60%);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+            @keyframes webkit-toLeft {
+                from {
+                    -webkit-transform: translateX(60%);
+                }
+                to {
+                    -webkit-transform: translateX(0);
+                }
+            }
         }
         .text {
-            text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -106,8 +151,9 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                     <br />
                     <span className={'bold'}>
                         Web3 세계에서 활동하는 여성 창작자가 매우 적다는
-                        연구결과가 있었습니다.
-                    </span>{' '}
+                        연구결과가 있었습니다.{' '}
+                    </span>
+                    {isPC && <br />}
                     잠재력 있는 여성 창작자들이 Web3에서 빛을 발하지 못하고 있던
                     것이죠.
                     <br />
@@ -162,13 +208,26 @@ export default function Story({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                 </div>
             </div>
             <Draggable nodeRef={nodeRef} defaultClassName={'planets'}>
-                <div ref={nodeRef} className={'planet saturn'} />
+                <div
+                    ref={nodeRef}
+                    className={`planet saturn ${
+                        isShow && isPC ? 'toRight' : ''
+                    }`}
+                />
             </Draggable>
             <Draggable nodeRef={nodeRef}>
-                <div ref={nodeRef} className={'planet jupiter'} />
+                <div
+                    ref={nodeRef}
+                    className={`planet jupiter ${
+                        isShow && isPC ? 'toLeft' : ''
+                    }`}
+                />
             </Draggable>
             <Draggable nodeRef={nodeRef}>
-                <div ref={nodeRef} className={'planet mars'} />
+                <div
+                    ref={nodeRef}
+                    className={`planet mars  ${isShow && isPC ? 'toLeft' : ''}`}
+                />
             </Draggable>
         </div>
     );

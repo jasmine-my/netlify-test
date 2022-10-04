@@ -14,17 +14,12 @@ export default function Team({ isPC, isTablet, isMobile }: mediaQueryTypes) {
     const landingTeamStyle = css`
         ${landingSectionStyle(isMobile, isTablet)};
         .teamCards {
-            display: grid;
-            grid-template-columns: ${isMobile
-                ? 'repeat(1, 1fr)'
-                : isTablet
-                ? 'repeat(2, 1fr)'
-                : 'repeat(4, 1fr)'};
+            display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            justify-items: stretch;
             align-items: center;
-            gap: ${isMobile || isTablet ? '56px' : '60px 60px '};
-            width: 100%;
+            gap: ${isMobile ? '56px' : isTablet ? '60px 16px' : '80px 40px '};
+            width: ${isPC ? '80%' : '100%'};
             margin: 0 auto;
             position: relative;
             z-index: 1;
@@ -49,7 +44,6 @@ export default function Team({ isPC, isTablet, isMobile }: mediaQueryTypes) {
             text-align: center;
             z-index: 1;
             position: relative;
-            width: ${isMobile ? '95%' : isTablet ? '60%' : '75%'};
         }
     `;
 
@@ -81,14 +75,17 @@ export default function Team({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                         <span>다양한 분야를 경험했어요.</span>
                     </p>
                     <br />
-                    <p>저희도 NFT가 낯설고 어렵게 느껴질 때가 있었어요.</p>
+                    <p>
+                        저희도 NFT가{' '}
+                        <span>낯설고 어렵게 느껴질 때가 있었어요.</span>
+                    </p>
                     <p>하지만 한 가지는 분명했습니다.</p>
                     <br />
                     <p>저희는 불편하고 어려운 커뮤니티 대신, </p>
                     <p>여성 창작자를 위한 포용적인 커뮤니티를 만들어 </p>
                     <p>
-                        더 많은 여성들이 NFT 시장에서 빛을 발할 수 있도록{' '}
-                        <span>지원하려고 합니다.</span>
+                        더 많은 여성들이 NFT 시장에서{' '}
+                        <span>빛을 발할 수 있도록 지원하려고 합니다.</span>
                     </p>
                     <br />
                     <p>SOW Citizen으로 함께해주신다면,</p>

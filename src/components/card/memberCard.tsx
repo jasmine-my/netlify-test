@@ -13,8 +13,8 @@ export interface IMemberCardProps {
 }
 
 const MemberCardStyle = (isMobile: boolean, index: number) => css`
-    //width: ${isMobile ? '100%' : '223px'};
-    height: 100%;
+    width: 223px;
+    height: 410px;
     border-radius: 20px;
     overflow: hidden;
     display: grid;
@@ -26,8 +26,7 @@ const MemberCardStyle = (isMobile: boolean, index: number) => css`
     }
     .profileImage {
         width: 100%;
-        // width: ${isMobile ? '360px' : '223px'};
-        height: ${isMobile ? '360px' : '223px'};
+        height: 223px;
         background-image: url('assets/images/profiles/profile-${index}.jpg');
         background-position: center center;
         background-size: cover;
@@ -81,7 +80,7 @@ export default function MemberCard({
     const isMobile = useMediaQuery({ query: mediaQuery.MOBILE });
 
     return (
-        <Tilt>
+        <Tilt tiltMaxAngleX={10} tiltMaxAngleY={5} transitionSpeed={500}>
             <div css={MemberCardStyle(isMobile, index)}>
                 <div className={'profileImage'} />
                 <div className={'contents'}>
