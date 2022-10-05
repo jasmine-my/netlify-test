@@ -71,7 +71,7 @@ export default function Team({ isPC, isTablet, isMobile }: mediaQueryTypes) {
                         <span>팀원들이 함께합니다.</span>
                     </p>
                     <p>
-                        <span>각자 팟캐스트, 공연, 글, 디자인까지</span>
+                        <span>각자 팟캐스트, 공연, 글, 디자인까지 </span>
                         <span>다양한 분야를 경험했어요.</span>
                     </p>
                     <br />
